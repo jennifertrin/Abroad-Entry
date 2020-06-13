@@ -1,8 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../style/style.css';
 import React, { Component } from 'react';
+import Languages from './languages';
 
 class FlightCode extends Component {
+    onLanguageChange(lang){
+
+    }
+    
     validateCode(code){
         //validated from the value
     }
@@ -10,7 +15,10 @@ class FlightCode extends Component {
     render(){
         return(
             <div>
-                {/**HAVE Language Component up here */}
+                <div>
+                    {/**Logo goes here */}
+                    <Languages languageChange={this.onLanguageChange.bind(this)} />
+                </div>
                 <div className="jumbotron jumbotron-fluid is-fullheight">
                     <div className="container absolutelyOneThird">
                         <h1 className="display-4">Please enter the code provided by your flight attendants.</h1>

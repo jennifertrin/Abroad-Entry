@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import '../style/style.css';
+import Languages from './languages';
 
 class Summary extends Component {
+    onLanguageChange(lang){
+
+    }
+    
     send(){
         //Send code to server
     }
@@ -8,7 +14,10 @@ class Summary extends Component {
     render(){
         return(
             <div>
-                {/**HAVE Language Component up here */}
+                <div>
+                    {/**Logo goes here */}
+                    <Languages languageChange={this.onLanguageChange.bind(this)} />
+                </div>
                 <div className="jumbotron jumbotron-fluid is-fullheight">
                     <div className="container absolutelyOneThird">
                         <h2>Thank you for filling in the information.</h2>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../style/style.css';
+import Languages from './languages';
 
 class AuthenticationCode extends Component {
     constructor(props){
@@ -10,6 +12,9 @@ class AuthenticationCode extends Component {
         }
     }
 
+    onLanguageChange(lang){
+
+    }
 
     authenticateCode(code){
         //validated from the value
@@ -18,7 +23,10 @@ class AuthenticationCode extends Component {
     render(){
         return(
             <div>
-                {/**HAVE Language Component up here */}
+                <div>
+                    {/**Logo goes here */}
+                    <Languages languageChange={this.onLanguageChange.bind(this)} />
+                </div>
                 <div className="jumbotron jumbotron-fluid is-fullheight">
                     <div className="container absolutelyOneThird">
                         <h2>Thank you for flying with us, {this.state.airline}, from {this.state.origin} to {this.state.destination}.</h2> <br/>
