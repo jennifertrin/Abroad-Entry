@@ -1,4 +1,5 @@
 import '../style/style.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
 import detectBrowserLanguage from 'detect-browser-language';
 import en from '../i18n/en.json';
@@ -65,9 +66,9 @@ class Languages extends Component {
             <div className="dropdown">
                 <span>{localization.Languages}</span>
                 <div className="dropdown-content">
-                    <button onClick = {() => this.changeLanguage('en')} >{localization.English}</button> <br />
-                    <button onClick = {() => this.changeLanguage('fr')} >{localization.French}</button> <br />
-                    <button onClick = {() => this.changeLanguage('es')} >{localization.Spanish}</button> <br />
+                    <button class="languageButton btn-sm" onClick = {() => this.changeLanguage('en')} >{localization.English}</button> <br />
+                    <button class="languageButton btn-sm" onClick = {() => this.changeLanguage('fr')} >{localization.French}</button> <br />
+                    <button class="languageButton btn-sm" onClick = {() => this.changeLanguage('es')} >{localization.Spanish}</button> <br />
                 </div>
             </div>
         );
