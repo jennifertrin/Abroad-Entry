@@ -6,16 +6,17 @@ import AuthenticationCode from './components/user_authenticationCode';
 import Summary from './components/user_summary';
 import FlightAttendantCode from './components/FlightAttendantCode';
 import FlightAttendantInput from './components/FlightAttendantInput'
+import FormCanada from './components/form_Canada';
 
 function App() {
   return (
     <div className="App">
-      <FlightCode />
+      
       {/*<AuthenticationCode />*/}
       {/*<Summary />*/}
       {/*<FlightAttendantCode />*/}
-      {/*<FlightAttendantInput />*/
-      }
+      {/*<FlightAttendantInput />*/}
+      <FormCanada />
     </div>
   );
 }
