@@ -39,6 +39,7 @@
   }
 
 .panelTravel {
+    position: relative;
     background-color: #DA4167;
     width: 85%;
     height: 30%;
@@ -48,6 +49,8 @@
 }
 
 .panelLanguages {
+    z-index: 1;
+    position: relative;
     background-color: #f2f5ea;
     width: 100%;
     height: 10%;
@@ -58,6 +61,7 @@
 }
 
 h2 {
+    position: relative;
     font-family: sans-serif;
     color: #F2F5EA;
     letter-spacing: 0.025em;
@@ -68,13 +72,13 @@ h2 {
     height: 20%;
     width: 100%;
     display: inline-block;
-    padding-bottom: 100%;
+    margin-bottom: 15%;
     vertical-align: middle;
     overflow: hidden;
 }
 
 #companyHeader {
-    margin: 10px 0;
+    position: relative;
     text-transform: uppercase;
     fill: #383F51;
     letter-spacing: 0.05em;
@@ -84,6 +88,7 @@ h2 {
 }
 
 svg {
+
     display: inline-block;
     position: absolute;
     top: 0;
@@ -96,11 +101,13 @@ svg {
 }
 
 .Submit {
+    position: relative;
     background-color: #68C5DB;
     color: #383F51;
 }
 
 .languageButton {
+    position: relative;
     margin-top: 10px;
     width: 70%;
     background-color: #68C5DB;
@@ -108,6 +115,13 @@ svg {
 }
 
 .user_flightCode {
+    background-color: #F2F5EA;
+    height: 100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+body { 
     background-color: #F2F5EA;
 }
 
