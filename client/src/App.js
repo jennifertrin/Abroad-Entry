@@ -11,19 +11,11 @@ import FormCanada from './components/form_Canada';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      {/*<FlightCode />*/}
-=======
-      
->>>>>>> f0d53040145793b6210a35c4aa5d910d2fa92271
       {/*<AuthenticationCode />*/}
       {/*<Summary />*/}
       {/*<FlightAttendantCode />*/}
       {/*<FlightAttendantInput />*/}
-<<<<<<< HEAD
-=======
       <FormCanada />
->>>>>>> f0d53040145793b6210a35c4aa5d910d2fa92271
     </div>
   );
 }
