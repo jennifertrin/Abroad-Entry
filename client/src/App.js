@@ -10,12 +10,11 @@ import FlightAttendantInput from './components/FlightAttendantInput'
 function App() {
   return (
     <div className="App">
-      <FlightCode />
+      {/*<FlightCode />*/}
       {/*<AuthenticationCode />*/}
       {/*<Summary />*/}
       {/*<FlightAttendantCode />*/}
-      {/*<FlightAttendantInput />*/
-      }
+      {/*<FlightAttendantInput />*/}
     </div>
   );
 }
