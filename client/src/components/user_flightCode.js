@@ -2,16 +2,42 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../style/style.css';
 import React, { Component } from 'react';
 import Languages from './languages';
+import axios from 'axios';
 
 class FlightCode extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            validation: false
+        }
+    }
+
     onLanguageChange(lang){
 
     }
     
     validateCode(code){
-        //validated from the value
+        console.log(code);
+        axios.post(`api/user/codeValidation`, { code })
+        .then(res => {
+            console.log(res.data);
+            this.setState({validation: res.data.result});
+      })
+
+      console.log(this.state.validation);
+      //go to next page with code that stored in this.state.validation
     }
 
+    /*
+    .then((res) => {
+          console.log(res)
+          this.setState({ dataFetched: true, farmerData: res.data.results !== undefined ? res.data.results : [] })
+        })
+        .catch((err) => {
+          console.log(err)
+          this.setState({ dataFetched: true })
+        })
+    */
     render(){
         return(
             <div class="user_flightCode">

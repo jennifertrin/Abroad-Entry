@@ -1,0 +1,28 @@
+{
+  "name": "Abroad-Entry",
+  "version": "1.0.0",
+  "description": "Hackathon project for <Travel/Scrum>\r https://travelscrumhackathon.devpost.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echang49/Abroad-Entry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/echang49/Abroad-Entry/issues"
+  },
+  "homepage": "https://github.com/echang49/Abroad-Entry#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
