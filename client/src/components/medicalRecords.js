@@ -33,16 +33,23 @@ class Medical extends Component {
 
     submitRecord(){
         let tempState = this.state;
-        /*let penicillin = document.getElementById("penicillin").value;
+        let penicillin = document.getElementById("penicillin").value;
         let novocaine = document.getElementById("novocaine").value;
         let aspirin = document.getElementById("aspirin").value;
         let analgin = document.getElementById("analgin").value;
-        let otherAllergy = document.getElementById("otherAllergy").value;
         
-        axios.post(`api/user/passportValidation`, { penicillin, novocaine, aspirin, analgin, otherAllergy })
+        axios.post(`/api/user/medicalEncrypt`, { penicillin, novocaine, aspirin, analgin})
         .then(res => {
             console.log(res.data);
-        })*/
+            let tempPropState = this.props.state;
+            let MedicalData = {
+                penicillin : res.data.penicillin,
+                novocaine : res.data.novocaine,
+                aspirin : res.data.aspirin,
+                analgin : res.data.analgin
+            }
+            this.props.setState({MedicalData: MedicalData});
+        })
         tempState.redirect = true;
         this.setState(tempState);
     }

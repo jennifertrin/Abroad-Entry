@@ -22,6 +22,7 @@ class App extends Component {
       Data: [
 
       ],
+      MedicalData: {},
       Parameters: {
         validFlight : false,
         airline: '',
@@ -55,7 +56,7 @@ class App extends Component {
               <FormMexico />
             </Route>*/}
             <Route path="/MedicalRecords">
-              <Medical />
+              <Medical setState={this.setState.bind(this)} state={this.state} />
             </Route>
             <Route path="/summary">
               <Summary />

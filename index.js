@@ -98,13 +98,11 @@ app.post('/api/user/passportValidation', (req,res) => {
 //Encrypts the medical record data
 app.post('/api/user/medicalEncrypt', (req,res) => {
 
-    var encrypted = CryptoJS.AES.encrypt(req.body.penicillin, "Secret Passphrase").toString();;
-    var encrypted2 = CryptoJS.AES.encrypt(req.body.novocaine, "Secret Passphrase").toString();;
-    var encrypted3 = CryptoJS.AES.encrypt(req.body.aspirin, "Secret Passphrase").toString();;
-    var encrypted4 = CryptoJS.AES.encrypt(req.body.analgin, "Secret Passphrase").toString();;
-    var encrypted5 = CryptoJS.AES.encrypt(req.body.otherAllergy, "Secret Passphrase").toString();;
-    res.status(200).send({"result": false});
-    console.log('Sent list of items');
+    var encrypted = CryptoJS.AES.encrypt(req.body.penicillin, "Secret Passphrase").toString();
+    var encrypted2 = CryptoJS.AES.encrypt(req.body.novocaine, "Secret Passphrase").toString();
+    var encrypted3 = CryptoJS.AES.encrypt(req.body.aspirin, "Secret Passphrase").toString();
+    var encrypted4 = CryptoJS.AES.encrypt(req.body.analgin, "Secret Passphrase").toString();
+    res.status(200).send({"penicillin": encrypted, "novocaine": encrypted2, "aspirin": encrypted3, "analgin": encrypted4});
 });
 
 //Submits the user form
