@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../style/style.css';
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import Languages from './languages';
 import axios from 'axios';
 
@@ -8,7 +9,8 @@ class FlightCode extends Component {
     constructor(props){
         super(props);
         this.state = {
-            validation: false
+            validation: false,
+            redirect: false
         }
     }
 
@@ -17,31 +19,43 @@ class FlightCode extends Component {
     }
     
     validateCode(code){
-        console.log(code);
         axios.post(`api/user/codeValidation`, { code })
         .then(res => {
             console.log(res.data);
             this.setState({validation: res.data.result});
+            let Parameters = {
+                validFlight : res.data.result,
+                airline: res.data.airline,
+                originAirport: res.data.originAirport,
+                destinationAirport: res.data.destinationAirport
+            }
+            this.props.setState({Parameters: Parameters});
+            if(this.state.validation === true){
+                let tempState = this.state;
+                tempState.redirect = true;
+                this.setState(tempState);
+                //send state up to state
+            }
+            else{
+                console.log("WRONG FLIGHT CODE");
+            }
       })
-
-      console.log(this.state.validation);
       //go to next page with code that stored in this.state.validation
     }
 
-    /*
-    .then((res) => {
-          console.log(res)
-          this.setState({ dataFetched: true, farmerData: res.data.results !== undefined ? res.data.results : [] })
-        })
-        .catch((err) => {
-          console.log(err)
-          this.setState({ dataFetched: true })
-        })
-    */
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/auth' />
+          //pass through state
+        }
+    }
+
     render(){
         return(
             <div class="user_flightCode">
+                {this.renderRedirect()}
                 <div class="panelLanguages">
+                    {/**Logo goes here */}
                     <Languages languageChange={this.onLanguageChange.bind(this)} />
                 </div>
                 <div id="welcomeScreen">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../style/style.css';
 import Languages from './languages';
+import {Redirect} from 'react-router-dom';
 
 class AuthenticationCode extends Component {
     constructor(props){
@@ -8,8 +9,12 @@ class AuthenticationCode extends Component {
         this.state = {
             airline: "Air Canada",
             origin: "Toronto",
-            destination: "New York"
+            destination: "New York",
         }
+    }
+
+    componentDidMount(){
+        console.log(this.props.Parameters);
     }
 
     onLanguageChange(lang){
