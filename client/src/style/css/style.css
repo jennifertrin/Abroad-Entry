@@ -1,0 +1,65 @@
+.ml-40{
+    margin-left: 40px;
+}
+
+.mr-40{
+    margin-right: 40px;
+}
+
+.mt-30{
+    margin-top: 30px;
+}
+
+.mb-30{
+    margin-bottom: 30px;
+}
+
+.ml-70{
+    margin-left: 70px;
+}
+
+.mr-70{
+    margin-right: 70px;
+}
+
+.mt-60{
+    margin-top: 60px;
+}
+
+.mb-60{
+    margin-bottom: 60px;
+}
+
+.logo{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+.languages{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+button.invisible{
+    background: transparent;
+    border: none !important;
+    outline:none;
+    font-size: 1em;
+}
+
+.z-index0{
+    z-index: 0;
+}
+
+.z-index10{
+    z-index: 10;
+}
+
+.absolutelyCentered{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

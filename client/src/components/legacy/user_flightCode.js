@@ -1,10 +1,9 @@
-import '../style/css/custom-bulma.css';
-import '../style/css/style.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import '../style/style.css';
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
-import Navbar from './navbar';
+import Languages from './languages';
 import axios from 'axios';
-import $ from 'jquery';
 
 class FlightCode extends Component {
     constructor(props){
@@ -16,7 +15,7 @@ class FlightCode extends Component {
     }
 
     onLanguageChange(lang){
-        console.log("We change");
+
     }
     
     validateCode(code){
@@ -52,25 +51,29 @@ class FlightCode extends Component {
 
     render(){
         return(
-            <div>
+            <div class="user_flightCode">
                 {this.renderRedirect()}
-                <Navbar languageChange={this.onLanguageChange.bind(this)} />
-                <div className="hero is-fullheight is-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill="#F2F5EA" fillOpacity="1" d="M0,160L120,176C240,192,480,224,720,245.3C960,267,1200,277,1320,282.7L1440,288L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+                <div class="panelLanguages">
+                    {/**Logo goes here */}
+                    <Languages languageChange={this.onLanguageChange.bind(this)} />
+                </div>
+                <div id="welcomeScreen">
+                    <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                        <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"></path>
+                        <text x="50%" y="15%" id="companyHeader">Welcome to Abroad Entry!</text>
                     </svg>
-
-                    <div className="absolutelyCentered">
-                        <p className="is-size-1">Welcome to Abroad Entry!</p>
-                        <div className = "box">Please enter the code provided by your flight attendants.</div>
-                        <div className="field">
-                            <label className="label has-text-left has-text-white">Code:</label>
-                            <div className="control">
-                                <input className="input" type="text" placeholder="Example: A8B6F6" id="flightCode" />
+                </div>
+                <div class="panelTravel">
+                        <h2 class="instructions">Please enter the code provided by your flight attendants.</h2>
+                </div>
+                    <div class="input-group mb-3 input-group-lg code-input">
+                        <div class="input-group-prepend">
+                                <span class="input-group-text" id="codeSpan">Code</span>
                             </div>
-                        </div>
-                        <button type="button" className="button is-dark" onClick={() => this.validateCode(document.getElementById("flightCode").value)}>Submit</button>
+                            <input type="text" class="form-control" placeholder="Example: A8B6F6" id="flightCode" />
                     </div>
+                <div class="SubmitButton">
+                <button type="button" class="Submit btn-lg" onClick={() => this.validateCode(document.getElementById("flightCode").value)}>Submit</button>
                 </div>
             </div>
         );

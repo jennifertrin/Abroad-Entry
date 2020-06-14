@@ -1,0 +1,39 @@
+constructor(props){
+    super(props);
+    this.state = {
+        part1 : true,
+        homeAddress : false,
+        ArrivingBy : false,
+        purposeOfTraveler: false,
+        arrivingFrom: false,
+        bringingCanada : false,
+        visitorsToCanada : false,
+        residentsOfCanada : false,
+        signatures : false
+    }
+}
+
+
+
+render(){
+    return(
+        <div>
+            {this.state.part1 ? <Part1 state={this.state} setState={this.setState} /> : <div />}
+            {this.state.homeAddress ? <Part1 state={this.state} setState={this.setState} /> : <div />}
+
+
+        </div>
+    );
+}
+
+class Part1 extends Component {
+    ....
+    next(){
+        let tempState = this.props.state;
+        tempState.part1 = false;
+        tempState.homeAddres = true;
+        this.props.setState(tempState);
+    }
+
+    <button onClick={() => this.next()} >Next</button>
+}

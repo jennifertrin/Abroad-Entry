@@ -1,5 +1,5 @@
-import '../style/style.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import '../style/css/custom-bulma.css';
+import '../style/css/style.css';
 import React, { Component } from 'react';
 import detectBrowserLanguage from 'detect-browser-language';
 import en from '../i18n/en.json';

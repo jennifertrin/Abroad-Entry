@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../style/style.css';
+import '../style/css/custom-bulma.css';
+import '../style/css/style.css';
 
 class FormAmerica extends Component {
     constructor(props){

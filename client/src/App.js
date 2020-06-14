@@ -14,8 +14,6 @@ import FlightAttendantCode from './components/FlightAttendantCode';
 import FlightAttendantInput from './components/FlightAttendantInput';
 import Medical from './components/medicalRecords';
 import FormCanada from './components/form_Canada';
-import FormAmerica from './components/form_America';
-import FormMexico from './components/form_Mexico';
 
 class App extends Component {
   constructor(props){
@@ -49,22 +47,22 @@ class App extends Component {
             <Route path="/form/Canada">
               <FormCanada />
             </Route>
-            <Route path="/form/America">
+            {/*<Route path="/form/America">
               <FormAmerica />
             </Route>
             <Route path="/form/Mexico">
               <FormMexico />
-            </Route>
+            </Route>*/}
             <Route path="/MedicalRecords">
               <Medical />
             </Route>
             <Route path="/summary">
               <Summary />
             </Route>
-            <Route path="/flight/form">
+            <Route path="/flight/code">
               <FlightAttendantCode />
             </Route>
-            <Route path="/flight/code">
+            <Route path="/flight/form">
               <FlightAttendantInput />
             </Route>
           </Switch>

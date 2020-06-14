@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+$navbar-height : 6.0rem;
+
+$red : #DA4167;
+$ivory : #F2F5EA;
+$blue : #448FA3;
+
+$dark : #12263A;
+$danger: $red;
+$link : $blue;
+$warning : $ivory;
+
+
+$family-primary : Open Sans, sans-serif;
+
+
+@import "../bulma-0.8.0/bulma.sass";

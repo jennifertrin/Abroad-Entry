@@ -22,9 +22,9 @@ let exampleData = {
     "airline" : "United Airlines",
 	"flightNumber" : "3513",
 	"flightCode" : "A8F3C9",
-	"originAirport" : "YYZ",
-    "destinationAirport" : "JFK",
-    "accompanyingForm" : "America ",
+	"originAirport" : "JFK",
+    "destinationAirport" : "YYZ",
+    "accompanyingForm" : "Canada ",
 	"passengerForms" : [
 		{
             "Passport": "A832DF",
