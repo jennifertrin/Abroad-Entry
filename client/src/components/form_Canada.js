@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import '../style/style.css';
 import canada from '../images/canada.png'
 import family from '../images/family.png'
