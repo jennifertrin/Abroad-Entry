@@ -5,6 +5,20 @@ import { Redirect } from 'react-router-dom';
 import canada from '../images/canada.png'
 import family from '../images/family.png'
 import house from '../images/real-estate.png'
+import airplane from '../images/air-plane.png'
+import train from '../images/train.png'
+import car from '../images/minibus.png'
+import ship from '../images/ship.png'
+import study from '../images/book.png'
+import personal from '../images/tourist.png'
+import business from '../images/portfolio.png'
+import unitedStates from '../images/maps-and-location.png'
+import northAmerica from '../images/north-america.png'
+import world from '../images/international.png'
+import duties from '../images/payable.png'
+import visiting from '../images/tour-guide.png'
+import peopleHouse from '../images/personhouse.png'
+import signature from '../images/digital-signature.png'
 import Navbar from './navbar';
 
 class FormCanada extends Component {
@@ -312,9 +326,9 @@ class HomeAddress extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-variable is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -343,12 +357,49 @@ class ArrivingBy extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={airplane} alt="Icon of an airplane" width="150px" height="150px" id="airplanePhoto" />
+                    </div>
+                    <div className="column">
+                        <img src={train} alt="Icon of a train" width="150px" height="150px" id="trainPhoto" />
+                    </div>
+                    <div className="column">
+                        <img src={ship} alt="Icon of a ship" width="150px" height="150px" id="shipPhoto" />
+                    </div>
+                    <div className="column">
+                        <img src={car} alt="Icon of a car" width="150px" height="150px" id="carPhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 3</p>
                 <p className="subtitle">Arriving by:</p>
-                <div className="field">
-                    <label className="label has-text-left has-text-white">Coming By: Air, Rail, Marine or Highway</label>
-                    <div className="control">
-                        <input className="input" type="text" />
+                <div className="columns is-3">
+                    <label className="label has-text-left has-text-white">Method of arrival</label>
+                    <div class="dropdown is-hoverable control">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>Arriving By</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    Air
+      </a>
+                                <a class="dropdown-item">
+                                    Rail
+      </a>
+                                <a href="#" class="dropdown-item is-active">
+                                    Marine
+      </a>
+                                <a href="#" class="dropdown-item">
+                                    Highway
+      </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="field">
@@ -358,9 +409,9 @@ class ArrivingBy extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div className="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -389,6 +440,17 @@ class PurposeOfTraveller extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={study} alt="Icon of a person with a book" width="150px" height="150px" id="bookPhoto" />
+                    </div>
+                    <div className="column">
+                        <img src={personal} alt="Icon of a tourist" width="150px" height="150px" id="touristPhoto" />
+                    </div>
+                    <div className="column">
+                        <img src={business} alt="Icon of a briefcase" width="150px" height="150px" id="briefcasePhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 4</p>
                 <p className="subtitle">Purpose of Trip:</p>
                 <div className="field">
@@ -398,9 +460,9 @@ class PurposeOfTraveller extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -429,6 +491,17 @@ class ArrivingFrom extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={unitedStates} alt="Icon of a United States" width="150px" height="150px" id="unitedStates" />
+                    </div>
+                    <div className="column">
+                        <img src={northAmerica} alt="Icon of a North America" width="150px" height="150px" id="North America" />
+                    </div>
+                    <div className="column">
+                        <img src={world} alt="Icon of Earth" width="150px" height="150px" id="earthPhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 5</p>
                 <p className="subtitle">Arriving From:</p>
                 <div className="field">
@@ -438,9 +511,9 @@ class ArrivingFrom extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -469,6 +542,11 @@ class BringingCanada extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={duties} alt="Icon of a tax" width="150px" height="150px" id="taxPhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 6</p>
                 <p className="subtitle">Declarations:</p>
                 <div className="columns is-vcentered">
@@ -515,7 +593,7 @@ class BringingCanada extends Component {
                         <div className="field">
                             <label className="label has-text-left has-text-white">Date left Canada YY - MM - DD</label>
                             <div className="control">
-                                <input className="input" type="text" />
+                                <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
@@ -528,7 +606,7 @@ class BringingCanada extends Component {
                         <div className="field">
                             <label className="label has-text-left has-text-white">Date left Canada YY - MM - DD</label>
                             <div className="control">
-                                <input className="input" type="text" />
+                                <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
@@ -540,9 +618,9 @@ class BringingCanada extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -571,6 +649,11 @@ class VisitorsToCanada extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={visiting} alt="Icon of a visitor" width="150px" height="150px" id="visitorPhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 7</p>
                 <p className="subtitle">Visitors to Canada:</p>
                 <div className="field">
@@ -586,9 +669,9 @@ class VisitorsToCanada extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -617,6 +700,11 @@ class ResidentsOfCanada extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={peopleHouse} alt="Icon of a peopleinhouse" width="150px" height="150px" id="peopleHousePhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 8</p>
                 <p className="subtitle">Residents of Canada:</p>
                 <div className="field">
@@ -626,9 +714,9 @@ class ResidentsOfCanada extends Component {
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
@@ -658,6 +746,11 @@ class Signatures extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column">
+                        <img src={signature} alt="Icon of a digitial signature" width="150px" height="150px" id="signaturePhoto" />
+                    </div>
+                </div>
                 <p className="title">Part 9</p>
                 <p className="subtitle">Signatures (age 16 and older): I certify that my declaration is true and complete</p>
                 <p className="subtitle">1 signature minimum | 4 signatures maximum</p>
@@ -698,13 +791,13 @@ class Signatures extends Component {
                 <div className="field">
                     <label className="label has-text-left has-text-white">Date</label>
                     <div className="control">
-                        <input className="input" type="text" />
+                        <input className="input" type="date" />
                     </div>
                 </div>
                 <hr />
-                <div class="columns column-gap">
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column is-3" onClick={() => this.next()} >Next</button>
+                <div class="columns is-6">
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
                 </div>
             </div>
 
