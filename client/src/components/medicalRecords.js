@@ -3,6 +3,7 @@ import '../style/css/custom-bulma.css';
 import '../style/css/style.css';
 import { Redirect } from 'react-router-dom';
 import $ from 'jquery';
+import axios from 'axios';
 import Navbar from './navbar';
 import en from '../i18n/en.json';
 import fr from '../i18n/fr.json';
@@ -37,9 +38,28 @@ class Medical extends Component {
 
     submitRecord() {
         let tempState = this.state;
+        let penicillin = document.getElementById("penicillin").value;
+        let novocaine = document.getElementById("novocaine").value;
+        let aspirin = document.getElementById("aspirin").value;
+        let analgin = document.getElementById("analgin").value;
+        
+        axios.post(`/api/user/medicalEncrypt`, { penicillin, novocaine, aspirin, analgin})
+        .then(res => {
+            console.log(res.data);
+            let tempPropState = this.props.state;
+            let MedicalData = {
+                penicillin : res.data.penicillin,
+                novocaine : res.data.novocaine,
+                aspirin : res.data.aspirin,
+                analgin : res.data.analgin
+            }
+            this.props.setState({MedicalData: MedicalData});
+        })
         tempState.redirect = true;
         this.setState(tempState);
     }
+    
+
 
     otherCheck() {
         let tempState = this.state;
@@ -235,6 +255,7 @@ class Medical extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default Medical;
 
 /*
@@ -266,3 +287,6 @@ export default Medical;
                     placeholder="Indicate which..." disabled></textarea>
             </div>
 */
+=======
+export default Medical;
+>>>>>>> b481100be2084e457b7a28321776046c317708d2
