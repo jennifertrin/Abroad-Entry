@@ -29,10 +29,13 @@
     },
     "MedicalRecords": {
         "title": "Dossiers médicaux",
+        "testing": "Avez-vous été testé pour COVID-19?",
+        "close": "Avez-vous été en contact avec quelqu'un qui a contracté COVID-19?",
         "blood": "Groupe sanguin",
         "negative": "Négatif",
         "positive": "Positif",
         "allergies": "Vos médicaments allergènes:",
+        "allergyExists": "As tu des allergies?",
         "penicillin": "Pénicilline",
         "novocaine": "Novocaïne",
         "aspirin": "Aspirine",

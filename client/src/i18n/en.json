@@ -28,10 +28,14 @@
         "submit": "Submit"
     },
     "MedicalRecords": {
+        "part1": "COVID 19 Section",
+        "testing": "Have you been tested for COVID-19?",
+        "close": "Have you been in contact with anyone who contracted COVID-19?",
         "title": "Medical Records",
         "blood": "Blood type",
         "negative": "Negative",
         "positive": "Positive",
+        "allergyExists": "Do you have any allergies?",
         "allergies": "Your medicines allergens:",
         "penicillin": "Penicillin",
         "novocaine": "Novocaine",

@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import '../style/css/custom-bulma.css';
 import '../style/css/style.css';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import $ from 'jquery';
 import Navbar from './navbar';
 import en from '../i18n/en.json';
 import fr from '../i18n/fr.json';
 import es from '../i18n/es.json';
 
+
 class Medical extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            redirect : false,
-            otherCheck : false,
-            localization : {
+            redirect: false,
+            otherCheck: false,
+            localization: {
+                part1: en.MedicalRecords.part1,
+                testing: en.MedicalRecords.testing,
+                close: en.MedicalRecords.close,
                 title: en.MedicalRecords.title,
                 blood: en.MedicalRecords.blood,
                 negative: en.MedicalRecords.negative,
                 positive: en.MedicalRecords.positive,
+                allergyExists: en.MedicalRecords.allergyExists,
                 allergies: en.MedicalRecords.allergies,
                 penicillin: en.MedicalRecords.penicillin,
                 novocaine: en.MedicalRecords.novocaine,
@@ -30,31 +35,35 @@ class Medical extends Component {
         }
     }
 
-    submitRecord(){
+    submitRecord() {
         let tempState = this.state;
         tempState.redirect = true;
         this.setState(tempState);
 
     }
 
-    otherCheck(){
+    otherCheck() {
         let tempState = this.state;
-        if(tempState.otherCheck){
+        if (tempState.otherCheck) {
             tempState.otherCheck = false;
-        }else{
+        } else {
             tempState.otherCheck = true;
         }
         this.setState(tempState);
     }
 
-    onLanguageChange(lang){
+    onLanguageChange(lang) {
         let tempState = this.state;
 
-        if(lang === 'en'){
+        if (lang === 'en') {
+            tempState.localization.part1 = en.MedicalRecords.part1;
             tempState.localization.title = en.MedicalRecords.title;
+            tempState.localization.testing = en.MedicalRecords.testing;
+            tempState.localization.close = en.MedicalRecords.close;
             tempState.localization.blood = en.MedicalRecords.blood;
             tempState.localization.negative = en.MedicalRecords.negative;
             tempState.localization.positive = en.MedicalRecords.positive;
+            tempState.localization.allergyExists = en.MedicalRecords.allergyExists;
             tempState.localization.allergies = en.MedicalRecords.allergies;
             tempState.localization.penicillin = en.MedicalRecords.penicillin;
             tempState.localization.novocaine = en.MedicalRecords.novocaine;
@@ -63,11 +72,15 @@ class Medical extends Component {
             tempState.localization.other = en.MedicalRecords.other;
             tempState.localization.submit = en.MedicalRecords.submit;
         }
-        else if(lang === 'fr'){
+        else if (lang === 'fr') {
+            tempState.localization.part1 = fr.MedicalRecords.part1;
+            tempState.localization.testing = fr.MedicalRecords.testing;
+            tempState.localization.close = fr.MedicalRecords.close;
             tempState.localization.title = fr.MedicalRecords.title;
             tempState.localization.blood = fr.MedicalRecords.blood;
             tempState.localization.negative = fr.MedicalRecords.negative;
             tempState.localization.positive = fr.MedicalRecords.positive;
+            tempState.localization.allergyExists = fr.MedicalRecords.allergyExists;
             tempState.localization.allergies = fr.MedicalRecords.allergies;
             tempState.localization.penicillin = fr.MedicalRecords.penicillin;
             tempState.localization.novocaine = fr.MedicalRecords.novocaine;
@@ -75,11 +88,15 @@ class Medical extends Component {
             tempState.localization.analgin = fr.MedicalRecords.analgin;
             tempState.localization.other = fr.MedicalRecords.other;
             tempState.localization.submit = fr.MedicalRecords.submit;
-        }else if(lang === 'es'){
+        } else if (lang === 'es') {
+            tempState.localization.part1 = es.MedicalRecords.part1;
+            tempState.localization.testing = es.MedicalRecords.testing;
+            tempState.localization.close = es.MedicalRecords.close;
             tempState.localization.title = es.MedicalRecords.title;
             tempState.localization.blood = es.MedicalRecords.blood;
             tempState.localization.negative = es.MedicalRecords.negative;
             tempState.localization.positive = es.MedicalRecords.positive;
+            tempState.localization.allergyExists = es.MedicalRecords.allergyExists;
             tempState.localization.allergies = es.MedicalRecords.allergies;
             tempState.localization.penicillin = es.MedicalRecords.penicillin;
             tempState.localization.novocaine = es.MedicalRecords.novocaine;
@@ -88,10 +105,10 @@ class Medical extends Component {
             tempState.localization.other = es.MedicalRecords.other;
             tempState.localization.submit = es.MedicalRecords.submit;
         }
-        else{
+        else {
             console.log("error switching languages");
         }
-        
+
         this.setState(tempState);
     }
 
@@ -107,16 +124,56 @@ class Medical extends Component {
         return (
             <div>
                 <nav className="navbar">
-                    <Navbar languageChange={this.onLanguageChange.bind(this)} />    
+                    <Navbar languageChange={this.onLanguageChange.bind(this)} />
                 </nav>
                 {this.renderRedirect()}
-            
+                <div className="has-text-center">
                 <div className="hero is-fullheight-with-navbar is-link is-bold">
                     <div className="hero-body">
-                        <div className="container">
-                            <p className="title">{localization.title}</p>
+                        <div className="container is-vcentered">
+                            <h1 className="title">{localization.title}</h1>
+                            <h2>{localization.part1}</h2>
+                            <div class="field is-horizontal">
+                                <div class="field-label">
+                                    <label class="label subtitle">{localization.testing}</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field is-narrow">
+                                        <div class="control">
+                                            <label class="radio">
+                                                Yes
+                                            <input type="radio" name="member" value="yes"></input>
+                                            </label>
+                                            <label class="radio">
+                                                No
+                                            <input type="radio" name="member" value="no"></input>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field is-horizontal has-text-centered">
+                                <div class="field-label has-text-centered">
+                                    <label class="label subtitle">{localization.close}</label>
+                                </div>
+                                <div class="field-body has-text-centered">
+                                    <div class="field is-narrow">
+                                        <div class="control">
+                                            <label class="radio">
+                                                Yes 
+                                            <input type="radio" name="member" value="yes"></input>
+                                            </label>
+                                            <label class="radio">
+                                                No 
+                                            <input type="radio" name="member" value="no"></input>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div>
-                                <label id="dropdown-label" for="dropdown">{localization.blood}:</label>
+                                <label id="dropdown-label subtitle" for="dropdown">{localization.blood}:</label>
                                 <select type="" id="dropdown" placeholder="Choose an option">
                                     <option value="0">---</option>
                                     <option value="1">O</option>
@@ -131,6 +188,27 @@ class Medical extends Component {
                             </div>
                             <br />
                             <div>
+                                 <div class="field is-horizontal">
+                                <div class="field-label">
+                                    <label class="label subtitle">{localization.allergyExists}</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field is-narrow">
+                                        <div class="control">
+                                            <label class="radio">
+                                                Yes 
+                                                <input type="radio" name="member" value="yes">
+                                            </input>
+                                            </label>
+                                            <label class="radio">
+                                                No
+                                                <input type="radio" name="member" value="no">
+                                                </input>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                                 <p className="subtitle">{localization.allergies}</p>
                                 <input type="checkbox" name="check" id="penicillin" value="penicillin" ></input>
                                 <label id="check" for="penicillin">{localization.penicillin}</label>
@@ -142,16 +220,17 @@ class Medical extends Component {
                                 <label id="check" for="analgin">{localization.analgin}</label>
                                 <input type="checkbox" name="check" id="other" value="other" onClick={() => this.otherCheck()}></input>
                                 <label id="textarea-label" for="other">{localization.other}</label>
-                                {this.state.otherCheck ? 
-                                <textarea name="textarea" cols="35" placeholder="Indicate which..." id="otherAllergy" />
-                                :
-                                <div />}
+                                {this.state.otherCheck ?
+                                    <textarea name="textarea" cols="35" placeholder="Indicate which..." id="otherAllergy" />
+                                    :
+                                    <div />}
                             </div>
                             <br />
                             <button type="button" className="button is-dark" onClick={() => this.submitRecord()}>{localization.submit}</button>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }
@@ -160,7 +239,6 @@ class Medical extends Component {
 export default Medical;
 
 /*
-
 <div class="medicalRecords">
                 <label id="dropdown-label" for="dropdown">Blood type:</label>
                 <select type="" id="dropdown" placeholder="Choose an option">
