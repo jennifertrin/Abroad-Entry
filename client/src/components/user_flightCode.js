@@ -27,7 +27,8 @@ class FlightCode extends Component {
                 validFlight : res.data.result,
                 airline: res.data.airline,
                 originAirport: res.data.originAirport,
-                destinationAirport: res.data.destinationAirport
+                destinationAirport: res.data.destinationAirport,
+                accompanyingForm: res.data.accompanyingForm
             }
             this.props.setState({Parameters: Parameters});
             if(this.state.validation === true){
@@ -46,7 +47,6 @@ class FlightCode extends Component {
     renderRedirect = () => {
         if (this.state.redirect) {
             return <Redirect to='/auth' />
-          //pass through state
         }
     }
 

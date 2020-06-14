@@ -13,6 +13,8 @@ import Summary from './components/user_summary';
 import FlightAttendantCode from './components/FlightAttendantCode';
 import FlightAttendantInput from './components/FlightAttendantInput'
 import FormCanada from './components/form_Canada';
+import FormAmerica from './components/form_America';
+import FormMexico from './components/form_Mexico';
 
 class App extends Component {
   constructor(props){
@@ -25,7 +27,8 @@ class App extends Component {
         validFlight : false,
         airline: '',
         originAirport: '',
-        destinationAirport: ''
+        destinationAirport: '',
+        accompanyingForm: '',
       }
     }
   }
@@ -39,10 +42,16 @@ class App extends Component {
               <FlightCode setState={this.setState.bind(this)} />
             </Route>
             <Route path="/auth">
-              <AuthenticationCode Parameters={this.state.Parameters} />
+              <AuthenticationCode Parameters={this.state.Parameters} setState={this.setState.bind(this)} />
             </Route>
             <Route path="/form/Canada">
               <FormCanada />
+            </Route>
+            <Route path="/form/America">
+              <FormAmerica />
+            </Route>
+            <Route path="/form/Mexico">
+              <FormMexico />
             </Route>
             {/**Medical Records should be a component of the forms */}
             <Route path="/summary">

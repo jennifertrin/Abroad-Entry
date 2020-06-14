@@ -20,7 +20,8 @@ let exampleData = {
 	"flightNumber" : "3513",
 	"flightCode" : "A8F3C9",
 	"originAirport" : "YYZ",
-	"destinationAirport" : "JFK",
+    "destinationAirport" : "JFK",
+    "accompanyingForm" : "America",
 	"passengerForms" : [
 		{
 			"Passport": "A832DF",
@@ -39,7 +40,7 @@ app.post('/api/user/codeValidation', (req,res) => {
     //console.log(exampleData.flightCode);
     //console.log(req.body.code);
     if(exampleData.flightCode == req.body.code){ //validated
-        res.status(200).send({"result": true, "airline": exampleData.airline, "originAirport": exampleData.originAirport, "destinationAirport": exampleData.destinationAirport});
+        res.status(200).send({"result": true, "airline": exampleData.airline, "originAirport": exampleData.originAirport, "destinationAirport": exampleData.destinationAirport, "accompanyingForm": exampleData.accompanyingForm});
         //Should merge passportInfo into here to send back the data which could be moved within react
     }
     else{ //not validated
@@ -47,22 +48,11 @@ app.post('/api/user/codeValidation', (req,res) => {
     }
 });
 
-//Returns flight information
-app.get('/api/user/passportInfo', (req,res) => {
-    //later req will find the flightData
-    res.json({
-        airline : exampleData.airline,
-        originAirport : exampleData.originAirport,
-        destinationAirport : exampleData.destinationAirport
-    });
-    console.log('Sent list of items');
-});
-
 //Validates the passport number as a passenger of the plane
-app.get('/api/user/passportValidation', (req,res) => {
+app.post('/api/user/passportValidation', (req,res) => {
     let validation = false;
     for(let i = 0; i < exampleData.passengerForms.length ; i++){
-        if(req == exampleData.passengerForms[i].Passport){
+        if(req.body.code == exampleData.passengerForms[i].Passport){
             validation = true;
             break;
         }

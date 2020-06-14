@@ -41,3 +41,5 @@ class FormAmerica extends Component {
         );
     }
 }
+
+export default FormAmerica;

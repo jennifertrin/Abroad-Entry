@@ -52,3 +52,5 @@ class FormMexico extends Component {
         );
     }
 }
+
+export default FormMexico;
