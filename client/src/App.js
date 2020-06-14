@@ -29,7 +29,8 @@ class App extends Component {
         destinationAirport: '',
         accompanyingForm: ''
       },
-      identificationNumber: ''
+      identificationNumber: '',
+      flightCode: ''
     }
   }
 
@@ -60,10 +61,10 @@ class App extends Component {
               <Summary />
             </Route>
             <Route path="/flight/code">
-              <FlightAttendantCode />
+              <FlightAttendantCode flightCode = {this.state.flightCode} />
             </Route>
             <Route path="/flight/form">
-              <FlightAttendantInput />
+              <FlightAttendantInput setState = {this.setState.bind(this)}/>
             </Route>
           </Switch>
         </Router>
