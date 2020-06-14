@@ -37,18 +37,18 @@ class Navbar extends Component {
     onLanguageChange(lang){
         let tempState = this.state;
 
-        if(lang == 'en'){
+        if(lang === 'en'){
             tempState.localization.Languages = en.Languages.Languages;
             tempState.localization.English = en.Languages.English;
             tempState.localization.French = en.Languages.French;
             tempState.localization.Spanish = en.Languages.Spanish;
         }
-        else if(lang == 'fr'){
+        else if(lang === 'fr'){
             tempState.localization.Languages = fr.Languages.Languages;
             tempState.localization.English = fr.Languages.English;
             tempState.localization.French = fr.Languages.French;
             tempState.localization.Spanish = fr.Languages.Spanish;
-        }else if(lang == 'es'){
+        }else if(lang === 'es'){
             tempState.localization.Languages = es.Languages.Languages;
             tempState.localization.English = es.Languages.English;
             tempState.localization.French = es.Languages.French;
@@ -59,7 +59,7 @@ class Navbar extends Component {
         }
         
         this.setState(tempState);
-        this.props.languageChange();
+        this.props.languageChange(lang);
     }
     
     

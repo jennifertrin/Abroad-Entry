@@ -3,16 +3,49 @@ import '../style/css/custom-bulma.css';
 import '../style/css/style.css';
 import {Redirect} from 'react-router-dom';
 import Navbar from './navbar';
+import en from '../i18n/en.json';
+import fr from '../i18n/fr.json';
+import es from '../i18n/es.json';
 
 class Summary extends Component {
     constructor(props){
         super(props);
         this.state = {
-            redirect : false
+            redirect : false,
+            localization : {
+                title: en.Summary.title,
+                subtitle: en.Summary.subtitle,
+                tandc: en.Summary.tandc,
+                submit: en.Summary.submit
+            }
         }
     }
-    onLanguageChange(lang){
 
+    onLanguageChange(lang){
+        let tempState = this.state;
+
+        if(lang === 'en'){
+            tempState.localization.title = en.Summary.title;
+            tempState.localization.subtitle = en.Summary.subtitle;
+            tempState.localization.tandc = en.Summary.tandc;
+            tempState.localization.submit = en.Summary.submit;
+        }
+        else if(lang === 'fr'){
+            tempState.localization.title = fr.Summary.title;
+            tempState.localization.subtitle = fr.Summary.subtitle;
+            tempState.localization.tandc = fr.Summary.tandc;
+            tempState.localization.submit = fr.Summary.submit;
+        }else if(lang === 'es'){
+            tempState.localization.title = es.Summary.title;
+            tempState.localization.subtitle = es.Summary.subtitle;
+            tempState.localization.tandc = es.Summary.tandc;
+            tempState.localization.submit = es.Summary.submit;
+        }
+        else{
+            console.log("error switching languages");
+        }
+        
+        this.setState(tempState);
     }
     
     send(){
@@ -29,6 +62,8 @@ class Summary extends Component {
     }
 
     render(){
+        const localization = this.state.localization;
+
         return(
             <div>
                 {this.renderRedirect()}
@@ -39,10 +74,10 @@ class Summary extends Component {
                     </svg>
 
                     <div className="absolutelyCentered">
-                        <p className="is-size-1">Thank you for filling in the information.</p>
-                        <div className = "box">By submitting, you agree to the <a>Terms and Conditions</a>.</div>
+                        <p className="is-size-1">{localization.title}</p>
+                        <div className = "box">{localization.subtitle} <a>{localization.tandc}</a>.</div>
                         <br />
-                        <button type="button" className="button is-dark" onClick={() => this.send()}>Submit</button>
+                        <button type="button" className="button is-dark" onClick={() => this.send()}>{localization.submit}</button>
                     </div>
                 </div>
             </div>

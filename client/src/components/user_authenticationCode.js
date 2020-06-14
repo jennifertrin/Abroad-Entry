@@ -12,12 +12,53 @@ class AuthenticationCode extends Component {
     constructor(props){
         super(props);
         this.state = {
-            redirect: false
+            redirect: false,
+            localization : {
+                thanks: en.AuthenticationCode.thanks,
+                for_flying: en.AuthenticationCode.for_flying,
+                from: en.AuthenticationCode.from,
+                to: en.AuthenticationCode.to,
+                subtitle: en.AuthenticationCode.subtitle,
+                passportNum: en.AuthenticationCode.passportNum,
+                submit: en.AuthenticationCode.submit
+            }
         }
     }
 
     onLanguageChange(lang){
+        let tempState = this.state;
 
+        if(lang === 'en'){
+            tempState.localization.thanks = en.AuthenticationCode.thanks;
+            tempState.localization.for_flying = en.AuthenticationCode.for_flying;
+            tempState.localization.from = en.AuthenticationCode.from;
+            tempState.localization.to = en.AuthenticationCode.to;
+            tempState.localization.subtitle = en.AuthenticationCode.subtitle;
+            tempState.localization.passportNum = en.AuthenticationCode.passportNum;
+            tempState.localization.submit = en.AuthenticationCode.submit;
+        }
+        else if(lang === 'fr'){
+            tempState.localization.thanks = fr.AuthenticationCode.thanks;
+            tempState.localization.for_flying = fr.AuthenticationCode.for_flying;
+            tempState.localization.from = fr.AuthenticationCode.from;
+            tempState.localization.to = fr.AuthenticationCode.to;
+            tempState.localization.subtitle = fr.AuthenticationCode.subtitle;
+            tempState.localization.passportNum = fr.AuthenticationCode.passportNum;
+            tempState.localization.submit = fr.AuthenticationCode.submit;
+        }else if(lang === 'es'){
+            tempState.localization.thanks = es.AuthenticationCode.thanks;
+            tempState.localization.for_flying = es.AuthenticationCode.for_flying;
+            tempState.localization.from = es.AuthenticationCode.from;
+            tempState.localization.to = es.AuthenticationCode.to;
+            tempState.localization.subtitle = es.AuthenticationCode.subtitle;
+            tempState.localization.passportNum = es.AuthenticationCode.passportNum;
+            tempState.localization.submit = es.AuthenticationCode.submit;
+        }
+        else{
+            console.log("error switching languages");
+        }
+        
+        this.setState(tempState);
     }
 
     authenticateCode(code){
@@ -56,6 +97,7 @@ class AuthenticationCode extends Component {
 
     render(){
         const Data = this.props.Parameters;
+        const localization = this.state.localization;
 
         return(
             <div>
@@ -67,16 +109,16 @@ class AuthenticationCode extends Component {
                     </svg>
 
                     <div className="absolutelyCentered">
-                        <p className="is-size-2"><strong>Thank you</strong> for flying with us, <strong>{Data.airline}</strong>, from <strong>{Data.originAirport}</strong> to <strong>{Data.destinationAirport}</strong>.</p>
+                        <p className="is-size-2"><strong>{localization.thanks}</strong> {localization.for_flying} <strong>{Data.airline}</strong>, {localization.from} <strong>{Data.originAirport}</strong> {localization.to} <strong>{Data.destinationAirport}</strong>.</p>
                         <br />
-                        <div className = "box">For verification that you are a passenger, please enter your passport #.</div>
+                        <div className = "box">{localization.subtitle}</div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Passport Number:</label>
+                            <label className="label has-text-left has-text-white">{localization.passportNum}</label>
                             <div className="control">
                                 <input className="input" type="text" id="passportNumber" />
                             </div>
                         </div>
-                        <button type="button" className="button is-dark" onClick={() => this.authenticateCode(document.getElementById("passportNumber").value)}>Submit</button>
+                        <button type="button" className="button is-dark" onClick={() => this.authenticateCode(document.getElementById("passportNumber").value)}>{localization.submit}</button>
                     </div>
                 </div>
             </div>

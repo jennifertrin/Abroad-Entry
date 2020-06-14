@@ -4,6 +4,9 @@ import '../style/css/style.css';
 import {Redirect} from 'react-router-dom';
 import $ from 'jquery';
 import Navbar from './navbar';
+import en from '../i18n/en.json';
+import fr from '../i18n/fr.json';
+import es from '../i18n/es.json';
 
 class Medical extends Component {
     constructor(props){

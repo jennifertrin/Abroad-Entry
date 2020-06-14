@@ -6,28 +6,31 @@
         "Spanish": "Espagnol"
     },
     "FlightCode": {
-        "title": "Welcome to Abroad Entry!",
-        "subtitle": "Please enter the code provided by your flight attendants.",
+        "title": "Bienvenue au Abroad Entry!",
+        "subtitle": "Veuillez saisir le code fourni par vos agents de bord.",
         "code":  "Code:",
         "example": "Example: A8B6F6",
-        "submit": "Submit"
+        "submit": "Soumets"
     },
     "AuthenticationCode": {
-
+        "thanks": "Merci",
+        "for_flying": "pour voler avec nous,",
+        "from": "de",
+        "to": "a",
+        "subtitle": "Pour vérifier que vous êtes un passager, veuillez entrer votre numéro de passeport.",
+        "passportNum": "Numéro de Passeport:",
+        "submit": "Soumets"
     },
     "Summary": {
-
+        "title": "Merci d'avoir renseigné les informations.",
+        "subtitle" : "En soumettant, vous acceptez les",
+        "tandc" : "Termes et conditions",
+        "submit": "Soumets"
     },
     "MedicalRecords": {
 
     },
     "Form_Canada": {
-        
-    },
-    "Form_America": {
-        
-    },
-    "Form_Mexico": {
         
     }
 }

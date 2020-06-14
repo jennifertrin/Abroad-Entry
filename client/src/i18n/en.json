@@ -13,21 +13,24 @@
         "submit": "Submit"
     },
     "AuthenticationCode": {
-
+        "thanks": "Thank You",
+        "for_flying": "for flying with us,",
+        "from": "from",
+        "to": "to",
+        "subtitle": "For verification that you are a passenger, please enter your passport #.",
+        "passportNum": "Passport Number:",
+        "submit": "Submit"
     },
     "Summary": {
-
+        "title": "Thank you for filling in the information.",
+        "subtitle" : "By submitting, you agree to the",
+        "tandc" : "Terms and Conditions",
+        "submit": "Submit"
     },
     "MedicalRecords": {
 
     },
     "Form_Canada": {
-        
-    },
-    "Form_America": {
-        
-    },
-    "Form_Mexico": {
         
     }
 }

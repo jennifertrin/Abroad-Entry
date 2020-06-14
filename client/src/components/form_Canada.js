@@ -20,6 +20,9 @@ import visiting from '../images/tour-guide.png'
 import peopleHouse from '../images/personhouse.png'
 import signature from '../images/digital-signature.png'
 import Navbar from './navbar';
+import en from '../i18n/en.json';
+import fr from '../i18n/fr.json';
+import es from '../i18n/es.json';
 
 class FormCanada extends Component {
     constructor(props) {

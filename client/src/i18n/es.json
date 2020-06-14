@@ -6,24 +6,31 @@
         "Spanish": "Español"
     },
     "FlightCode": {
-
+        "title": "¡Bienvenido a Abroad Entry!",
+        "subtitle": "Ingrese el código provisto por sus asistentes de vuelo.",
+        "code":  "Código:",
+        "example": "Ejemplo: A8B6F6",
+        "submit": "Enviar"
     },
     "AuthenticationCode": {
-
+        "thanks": "Gracias",
+        "for_flying": "por volar con nosotros,",
+        "from": "de",
+        "to": "a",
+        "subtitle": "Para verificar que es un pasajero, ingrese su número de pasaporte.",
+        "passportNum": "Número de Pasaporte:",
+        "submit": "Enviar"
     },
     "Summary": {
-
+        "title": "Gracias por completar la información.",
+        "subtitle" : "Al enviar, usted acepta el",
+        "tandc" : "Términos y Condiciones",
+        "submit": "Enviar"
     },
     "MedicalRecords": {
 
     },
     "Form_Canada": {
-        
-    },
-    "Form_America": {
-        
-    },
-    "Form_Mexico": {
         
     }
 }
