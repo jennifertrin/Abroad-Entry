@@ -39,7 +39,7 @@ app.post('/api/user/codeValidation', (req,res) => {
     //console.log(exampleData.flightCode);
     //console.log(req.body.code);
     if(exampleData.flightCode == req.body.code){ //validated
-        res.status(200).send({"result": true});
+        res.status(200).send({"result": true, "airline": exampleData.airline, "originAirport": exampleData.originAirport, "destinationAirport": exampleData.destinationAirport});
         //Should merge passportInfo into here to send back the data which could be moved within react
     }
     else{ //not validated
