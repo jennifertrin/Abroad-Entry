@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const e = require('express');
 const bodyParser = require('body-parser');
+var CryptoJS = require("crypto-js");
 
 const app = express();
 
@@ -95,13 +96,13 @@ app.post('/api/user/passportValidation', (req,res) => {
 });
 
 //Encrypts the medical record data
-app.get('/api/user/medicalEncrypt', (req,res) => {
-    //for(let i=0; i<req.body.length; i++){
-    //encryption and then put in list    
-    //}
-    //
-    //res encrypted
-    console.log('Sent list of items');
+app.post('/api/user/medicalEncrypt', (req,res) => {
+
+    var encrypted = CryptoJS.AES.encrypt(req.body.penicillin, "Secret Passphrase").toString();
+    var encrypted2 = CryptoJS.AES.encrypt(req.body.novocaine, "Secret Passphrase").toString();
+    var encrypted3 = CryptoJS.AES.encrypt(req.body.aspirin, "Secret Passphrase").toString();
+    var encrypted4 = CryptoJS.AES.encrypt(req.body.analgin, "Secret Passphrase").toString();
+    res.status(200).send({"penicillin": encrypted, "novocaine": encrypted2, "aspirin": encrypted3, "analgin": encrypted4});
 });
 
 //Submits the user form

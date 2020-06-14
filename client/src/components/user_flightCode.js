@@ -15,6 +15,7 @@ class FlightCode extends Component {
         this.state = {
             validation: false,
             redirect: false,
+            errorMessage: false,
             localization : {
                 title: en.FlightCode.title,
                 subtitle: en.FlightCode.subtitle,
@@ -67,15 +68,16 @@ class FlightCode extends Component {
                 accompanyingForm: res.data.accompanyingForm
             }
             this.props.setState({Parameters: Parameters});
+            let tempState = this.state;
             if(this.state.validation === true){
-                let tempState = this.state;
                 tempState.redirect = true;
-                this.setState(tempState);
                 //send state up to state
             }
             else{
                 console.log("WRONG FLIGHT CODE");
+                tempState.errorMessage = true;
             }
+            this.setState(tempState);
       })
       //go to next page with code that stored in this.state.validation
     }
@@ -104,7 +106,14 @@ class FlightCode extends Component {
                             <label className="label has-text-left has-text-white">{localization.code}</label>
                             <div className="control">
                                 <input className="input" type="text" placeholder="Example: A8B6F6" id="flightCode" />
+                                
                             </div>
+                            {this.state.errorMessage ? 
+                                <p className="help has-text-right has-text-white">Flight Code Not Valid!</p>
+                                :
+                                <div />
+                            }
+                            
                         </div>
                         <button type="button" className="button is-dark" onClick={() => this.validateCode(document.getElementById("flightCode").value)}>{localization.submit}</button>
                     </div>

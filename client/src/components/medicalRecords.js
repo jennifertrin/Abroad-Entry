@@ -39,7 +39,6 @@ class Medical extends Component {
         let tempState = this.state;
         tempState.redirect = true;
         this.setState(tempState);
-
     }
 
     otherCheck() {
