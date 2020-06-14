@@ -66,15 +66,16 @@ class AuthenticationCode extends Component {
         axios.post(`api/user/passportValidation`, { code })
         .then(res => {
             this.setState({validation: res.data.result});
+            let tempState = this.state;
             if(this.state.validation === true){
-                let tempState = this.state;
                 tempState.redirect = true;
-                this.setState(tempState);
                 this.props.setState({identificationNumber: code});
             }
             else{
                 console.log("WRONG PASSENGER NUMBER");
+                tempState.errorMessage = true;
             }
+            this.setState(tempState);
       })
     }
 
@@ -117,6 +118,11 @@ class AuthenticationCode extends Component {
                             <div className="control">
                                 <input className="input" type="text" id="passportNumber" />
                             </div>
+                            {this.state.errorMessage ? 
+                                <p className="help has-text-right has-text-white">Passport Number Not Valid!</p>
+                                :
+                                <div />
+                            }
                         </div>
                         <button type="button" className="button is-dark" onClick={() => this.authenticateCode(document.getElementById("passportNumber").value)}>{localization.submit}</button>
                     </div>
