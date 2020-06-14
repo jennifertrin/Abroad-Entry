@@ -88,17 +88,17 @@ class FormCanada extends Component {
                 section8_subtitle: en.Form_Canada.section8_subtitle,
                 section8_stay: en.Form_Canada.section8_stay,
                 section8_exceed: en.Form_Canada.section8_exceed,
-                section9_title: en.Form_Canada.section7_title,
-                section9_subtitle: en.Form_Canada.section7_subtitle,
-                section9_exceed: en.Form_Canada.section7_declaration,
-                section10_title: en.Form_Canada.section7_firearm,
-                section10_subtitle: en.Form_Canada.section7_goods,
-                section10_minmax: en.Form_Canada.section7_animals,
-                section10_person1: en.Form_Canada.section7_money,
-                section10_person2: en.Form_Canada.section7_unaccompany,
-                section10_person3: en.Form_Canada.section7_farm,
-                section10_person4: en.Form_Canada.section7_dateLeft,
-                section10_date: en.Form_Canada.section7_value
+                section9_title: en.Form_Canada.section9_title,
+                section9_subtitle: en.Form_Canada.section9_subtitle,
+                section9_exceed: en.Form_Canada.section9_exceed,
+                section10_title: en.Form_Canada.section10_title,
+                section10_subtitle: en.Form_Canada.section10_subtitle,
+                section10_minmax: en.Form_Canada.section10_minmax,
+                section10_person1: en.Form_Canada.section10_person1,
+                section10_person2: en.Form_Canada.section10_person2,
+                section10_person3: en.Form_Canada.section10_person3,
+                section10_person4: en.Form_Canada.section10_person4,
+                section10_date: en.Form_Canada.section10_date
             }
         }
     }
