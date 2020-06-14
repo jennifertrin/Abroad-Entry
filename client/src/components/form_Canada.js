@@ -38,12 +38,293 @@ class FormCanada extends Component {
             visitorsToCanada: false,
             residentsOfCanada: false,
             signatures: false,
-            redirect: false
+            redirect: false,
+            localization : {
+                back: en.Form_Canada.back,
+                next: en.Form_Canada.next,
+                section1_title: en.Form_Canada.section1_title,
+                section1_subtitle: en.Form_Canada.section1_subtitle,
+                section2_title: en.Form_Canada.section2_title,
+                section2_subtitle: en.Form_Canada.section2_subtitle,
+                section2_minmax: en.Form_Canada.section2_minmax,
+                section2_fName: en.Form_Canada.section2_fName,
+                section2_mName: en.Form_Canada.section2_mName,
+                section2_lName: en.Form_Canada.section2_lName,
+                section2_dob: en.Form_Canada.section2_dob,
+                section2_citizenship: en.Form_Canada.section2_citizenship,
+                section3_title: en.Form_Canada.section3_title,
+                section3_subtitle: en.Form_Canada.section3_subtitle,
+                section3_address: en.Form_Canada.section3_address,
+                section3_city: en.Form_Canada.section3_city,
+                section3_province: en.Form_Canada.section3_province,
+                section3_country: en.Form_Canada.section3_country,
+                section3_zip: en.Form_Canada.section3_zip,
+                section4_title: en.Form_Canada.section4_title,
+                section4_subtitle: en.Form_Canada.section4_subtitle,
+                section4_method: en.Form_Canada.section4_method,
+                section4_air: en.Form_Canada.section4_air,
+                section4_rail: en.Form_Canada.section4_rail,
+                section4_marine: en.Form_Canada.section4_marine,
+                section4_highway: en.Form_Canada.section4_highway,
+                section4_name: en.Form_Canada.section4_name,
+                section5_title: en.Form_Canada.section5_title,
+                section5_subtitle: en.Form_Canada.section5_subtitle,
+                section5_purpose: en.Form_Canada.section5_purpose,
+                section6_title: en.Form_Canada.section6_title,
+                section6_subtitle: en.Form_Canada.section6_subtitle,
+                section6_from: en.Form_Canada.section6_from,
+                section7_title: en.Form_Canada.section7_title,
+                section7_subtitle: en.Form_Canada.section7_subtitle,
+                section7_declaration: en.Form_Canada.section7_declaration,
+                section7_firearm: en.Form_Canada.section7_firearm,
+                section7_goods: en.Form_Canada.section7_goods,
+                section7_animals: en.Form_Canada.section7_animals,
+                section7_money: en.Form_Canada.section7_money,
+                section7_unaccompany: en.Form_Canada.section7_unaccompany,
+                section7_farm: en.Form_Canada.section7_farm,
+                section7_dateLeft: en.Form_Canada.section7_dateLeft,
+                section7_value: en.Form_Canada.section7_value,
+                section8_title: en.Form_Canada.section8_title,
+                section8_subtitle: en.Form_Canada.section8_subtitle,
+                section8_stay: en.Form_Canada.section8_stay,
+                section8_exceed: en.Form_Canada.section8_exceed,
+                section9_title: en.Form_Canada.section7_title,
+                section9_subtitle: en.Form_Canada.section7_subtitle,
+                section9_exceed: en.Form_Canada.section7_declaration,
+                section10_title: en.Form_Canada.section7_firearm,
+                section10_subtitle: en.Form_Canada.section7_goods,
+                section10_minmax: en.Form_Canada.section7_animals,
+                section10_person1: en.Form_Canada.section7_money,
+                section10_person2: en.Form_Canada.section7_unaccompany,
+                section10_person3: en.Form_Canada.section7_farm,
+                section10_person4: en.Form_Canada.section7_dateLeft,
+                section10_date: en.Form_Canada.section7_value
+            }
         }
     }
 
-    onLanguageChange() {
+    onLanguageChange(lang){
+        let tempState = this.state;
 
+        if(lang === 'en'){
+            tempState.localization.back = en.Form_Canada.back;
+            tempState.localization.next = en.Form_Canada.next;
+
+            tempState.localization.section1_title = en.Form_Canada.section1_title;
+            tempState.localization.section1_subtitle = en.Form_Canada.section1_subtitle;
+
+            tempState.localization.section2_title = en.Form_Canada.section2_title;
+            tempState.localization.section2_subtitle = en.Form_Canada.section2_subtitle;
+            tempState.localization.section2_minmax = en.Form_Canada.section2_minmax;
+            tempState.localization.section2_fName = en.Form_Canada.section2_fName;
+            tempState.localization.section2_mName = en.Form_Canada.section2_mName;
+            tempState.localization.section2_lName = en.Form_Canada.section2_lName;
+            tempState.localization.section2_dob = en.Form_Canada.section2_dob;
+            tempState.localization.section2_citizenship = en.Form_Canada.section2_citizenship;
+
+            tempState.localization.section3_title = en.Form_Canada.section3_title;
+            tempState.localization.section3_subtitle = en.Form_Canada.section3_subtitle;
+            tempState.localization.section3_address = en.Form_Canada.section3_address;
+            tempState.localization.section3_city = en.Form_Canada.section3_city;
+            tempState.localization.section3_province = en.Form_Canada.section3_province;
+            tempState.localization.section3_country = en.Form_Canada.section3_country;
+            tempState.localization.section3_zip = en.Form_Canada.section3_zip;
+
+            tempState.localization.section4_title = en.Form_Canada.section4_title;
+            tempState.localization.section4_subtitle = en.Form_Canada.section4_subtitle;
+            tempState.localization.section4_method = en.Form_Canada.section4_method;
+            tempState.localization.section4_air = en.Form_Canada.section4_air;
+            tempState.localization.section4_rail = en.Form_Canada.section4_rail;
+            tempState.localization.section4_marine = en.Form_Canada.section4_marine;
+            tempState.localization.section4_highway = en.Form_Canada.section4_highway;
+            tempState.localization.section4_name = en.Form_Canada.section4_name;
+            
+            tempState.localization.section5_title = en.Form_Canada.section5_title;
+            tempState.localization.section5_subtitle = en.Form_Canada.section5_subtitle;
+            tempState.localization.section5_purpose = en.Form_Canada.section5_purpose;
+
+            tempState.localization.section6_title = en.Form_Canada.section6_title;
+            tempState.localization.section6_subtitle = en.Form_Canada.section6_subtitle;
+            tempState.localization.section6_from = en.Form_Canada.section6_from;
+
+            tempState.localization.section7_title = en.Form_Canada.section7_title;
+            tempState.localization.section7_subtitle = en.Form_Canada.section7_subtitle;
+            tempState.localization.section7_declaration = en.Form_Canada.section7_declaration;
+            tempState.localization.section7_firearm = en.Form_Canada.section7_firearm;
+            tempState.localization.section7_goods = en.Form_Canada.section7_goods;
+            tempState.localization.section7_animals = en.Form_Canada.section7_animals;
+            tempState.localization.section7_money = en.Form_Canada.section7_money;
+            tempState.localization.section7_unaccompany = en.Form_Canada.section7_unaccompany;
+            tempState.localization.section7_farm = en.Form_Canada.section7_farm;
+            tempState.localization.section7_dateLeft = en.Form_Canada.section7_dateLeft;
+            tempState.localization.section7_value = en.Form_Canada.section7_value;
+
+            tempState.localization.section8_title = en.Form_Canada.section8_title;
+            tempState.localization.section8_subtitle = en.Form_Canada.section8_subtitle;
+            tempState.localization.section8_stay = en.Form_Canada.section8_stay;
+            tempState.localization.section8_exceed = en.Form_Canada.section8_exceed;
+
+            tempState.localization.section9_title = en.Form_Canada.section9_title;
+            tempState.localization.section9_subtitle = en.Form_Canada.section9_subtitle;
+            tempState.localization.section9_exceed = en.Form_Canada.section9_exceed;
+
+            tempState.localization.section10_title = en.Form_Canada.section10_title;
+            tempState.localization.section10_subtitle = en.Form_Canada.section10_subtitle;
+            tempState.localization.section10_minmax = en.Form_Canada.section10_minmax;
+            tempState.localization.section10_person1 = en.Form_Canada.section10_person1;
+            tempState.localization.section10_person2 = en.Form_Canada.section10_person2;
+            tempState.localization.section10_person3 = en.Form_Canada.section10_person3;
+            tempState.localization.section10_person4 = en.Form_Canada.section10_person4;
+            tempState.localization.section10_date = en.Form_Canada.section10_date;
+
+        }
+        else if(lang === 'fr'){
+            tempState.localization.back = fr.Form_Canada.back;
+            tempState.localization.next = fr.Form_Canada.next;
+
+            tempState.localization.section1_title = fr.Form_Canada.section1_title;
+            tempState.localization.section1_subtitle = fr.Form_Canada.section1_subtitle;
+
+            tempState.localization.section2_title = fr.Form_Canada.section2_title;
+            tempState.localization.section2_subtitle = fr.Form_Canada.section2_subtitle;
+            tempState.localization.section2_minmax = fr.Form_Canada.section2_minmax;
+            tempState.localization.section2_fName = fr.Form_Canada.section2_fName;
+            tempState.localization.section2_mName = fr.Form_Canada.section2_mName;
+            tempState.localization.section2_lName = fr.Form_Canada.section2_lName;
+            tempState.localization.section2_dob = fr.Form_Canada.section2_dob;
+            tempState.localization.section2_citizenship = fr.Form_Canada.section2_citizenship;
+
+            tempState.localization.section3_title = fr.Form_Canada.section3_title;
+            tempState.localization.section3_subtitle = fr.Form_Canada.section3_subtitle;
+            tempState.localization.section3_address = fr.Form_Canada.section3_address;
+            tempState.localization.section3_city = fr.Form_Canada.section3_city;
+            tempState.localization.section3_province = fr.Form_Canada.section3_province;
+            tempState.localization.section3_country = fr.Form_Canada.section3_country;
+            tempState.localization.section3_zip = fr.Form_Canada.section3_zip;
+
+            tempState.localization.section4_title = fr.Form_Canada.section4_title;
+            tempState.localization.section4_subtitle = fr.Form_Canada.section4_subtitle;
+            tempState.localization.section4_method = fr.Form_Canada.section4_method;
+            tempState.localization.section4_air = fr.Form_Canada.section4_air;
+            tempState.localization.section4_rail = fr.Form_Canada.section4_rail;
+            tempState.localization.section4_marine = fr.Form_Canada.section4_marine;
+            tempState.localization.section4_highway = fr.Form_Canada.section4_highway;
+            tempState.localization.section4_name = fr.Form_Canada.section4_name;
+
+            tempState.localization.section5_title = fr.Form_Canada.section5_title;
+            tempState.localization.section5_subtitle = fr.Form_Canada.section5_subtitle;
+            tempState.localization.section5_purpose = fr.Form_Canada.section5_purpose;
+
+            tempState.localization.section6_title = fr.Form_Canada.section6_title;
+            tempState.localization.section6_subtitle = fr.Form_Canada.section6_subtitle;
+            tempState.localization.section6_from = fr.Form_Canada.section6_from;
+
+            tempState.localization.section7_title = fr.Form_Canada.section7_title;
+            tempState.localization.section7_subtitle = fr.Form_Canada.section7_subtitle;
+            tempState.localization.section7_declaration = fr.Form_Canada.section7_declaration;
+            tempState.localization.section7_firearm = fr.Form_Canada.section7_firearm;
+            tempState.localization.section7_goods = fr.Form_Canada.section7_goods;
+            tempState.localization.section7_animals = fr.Form_Canada.section7_animals;
+            tempState.localization.section7_money = fr.Form_Canada.section7_money;
+            tempState.localization.section7_unaccompany = fr.Form_Canada.section7_unaccompany;
+            tempState.localization.section7_farm = fr.Form_Canada.section7_farm;
+            tempState.localization.section7_dateLeft = fr.Form_Canada.section7_dateLeft;
+            tempState.localization.section7_value = fr.Form_Canada.section7_value;
+
+            tempState.localization.section8_title = fr.Form_Canada.section8_title;
+            tempState.localization.section8_subtitle = fr.Form_Canada.section8_subtitle;
+            tempState.localization.section8_stay = fr.Form_Canada.section8_stay;
+            tempState.localization.section8_exceed = fr.Form_Canada.section8_exceed;
+
+            tempState.localization.section9_title = fr.Form_Canada.section9_title;
+            tempState.localization.section9_subtitle = fr.Form_Canada.section9_subtitle;
+            tempState.localization.section9_exceed = fr.Form_Canada.section9_exceed;
+
+            tempState.localization.section10_title = fr.Form_Canada.section10_title;
+            tempState.localization.section10_subtitle = fr.Form_Canada.section10_subtitle;
+            tempState.localization.section10_minmax = fr.Form_Canada.section10_minmax;
+            tempState.localization.section10_person1 = fr.Form_Canada.section10_person1;
+            tempState.localization.section10_person2 = fr.Form_Canada.section10_person2;
+            tempState.localization.section10_person3 = fr.Form_Canada.section10_person3;
+            tempState.localization.section10_person4 = fr.Form_Canada.section10_person4;
+            tempState.localization.section10_date = fr.Form_Canada.section10_date;
+
+        }else if(lang === 'es'){
+            tempState.localization.back = es.Form_Canada.back;
+            tempState.localization.next = es.Form_Canada.next;
+
+            tempState.localization.section1_title = es.Form_Canada.section1_title;
+            tempState.localization.section1_subtitle = es.Form_Canada.section1_subtitle;
+
+            tempState.localization.section2_title = es.Form_Canada.section2_title;
+            tempState.localization.section2_subtitle = es.Form_Canada.section2_subtitle;
+            tempState.localization.section2_minmax = es.Form_Canada.section2_minmax;
+            tempState.localization.section2_fName = es.Form_Canada.section2_fName;
+            tempState.localization.section2_mName = es.Form_Canada.section2_mName;
+            tempState.localization.section2_lName = es.Form_Canada.section2_lName;
+            tempState.localization.section2_dob = es.Form_Canada.section2_dob;
+            tempState.localization.section2_citizenship = es.Form_Canada.section2_citizenship;
+
+            tempState.localization.section3_title = es.Form_Canada.section3_title;
+            tempState.localization.section3_subtitle = es.Form_Canada.section3_subtitle;
+            tempState.localization.section3_address = es.Form_Canada.section3_address;
+            tempState.localization.section3_city = es.Form_Canada.section3_city;
+            tempState.localization.section3_province = es.Form_Canada.section3_province;
+            tempState.localization.section3_country = es.Form_Canada.section3_country;
+            tempState.localization.section3_zip = es.Form_Canada.section3_zip;
+
+            tempState.localization.section4_title = es.Form_Canada.section4_title;
+            tempState.localization.section4_subtitle = es.Form_Canada.section4_subtitle;
+            tempState.localization.section4_method = es.Form_Canada.section4_method;
+            tempState.localization.section4_air = es.Form_Canada.section4_air;
+            tempState.localization.section4_rail = es.Form_Canada.section4_rail;
+            tempState.localization.section4_marine = es.Form_Canada.section4_marine;
+            tempState.localization.section4_highway = es.Form_Canada.section4_highway;
+            tempState.localization.section4_name = es.Form_Canada.section4_name;
+
+            tempState.localization.section5_title = es.Form_Canada.section5_title;
+            tempState.localization.section5_subtitle = es.Form_Canada.section5_subtitle;
+            tempState.localization.section5_purpose = es.Form_Canada.section5_purpose;
+
+            tempState.localization.section6_title = es.Form_Canada.section6_title;
+            tempState.localization.section6_subtitle = es.Form_Canada.section6_subtitle;
+            tempState.localization.section6_from = es.Form_Canada.section6_from;
+
+            tempState.localization.section7_title = es.Form_Canada.section7_title;
+            tempState.localization.section7_subtitle = es.Form_Canada.section7_subtitle;
+            tempState.localization.section7_declaration = es.Form_Canada.section7_declaration;
+            tempState.localization.section7_firearm = es.Form_Canada.section7_firearm;
+            tempState.localization.section7_goods = es.Form_Canada.section7_goods;
+            tempState.localization.section7_animals = es.Form_Canada.section7_animals;
+            tempState.localization.section7_money = es.Form_Canada.section7_money;
+            tempState.localization.section7_unaccompany = es.Form_Canada.section7_unaccompany;
+            tempState.localization.section7_farm = es.Form_Canada.section7_farm;
+            tempState.localization.section7_dateLeft = es.Form_Canada.section7_dateLeft;
+            tempState.localization.section7_value = es.Form_Canada.section7_value;
+
+            tempState.localization.section8_title = es.Form_Canada.section8_title;
+            tempState.localization.section8_subtitle = es.Form_Canada.section8_subtitle;
+            tempState.localization.section8_stay = es.Form_Canada.section8_stay;
+            tempState.localization.section8_exceed = es.Form_Canada.section8_exceed;
+
+            tempState.localization.section9_title = es.Form_Canada.section9_title;
+            tempState.localization.section9_subtitle = es.Form_Canada.section9_subtitle;
+            tempState.localization.section9_exceed = es.Form_Canada.section9_exceed;
+
+            tempState.localization.section10_title = es.Form_Canada.section10_title;
+            tempState.localization.section10_subtitle = es.Form_Canada.section10_subtitle;
+            tempState.localization.section10_minmax = es.Form_Canada.section10_minmax;
+            tempState.localization.section10_person1 = es.Form_Canada.section10_person1;
+            tempState.localization.section10_person2 = es.Form_Canada.section10_person2;
+            tempState.localization.section10_person3 = es.Form_Canada.section10_person3;
+            tempState.localization.section10_person4 = es.Form_Canada.section10_person4;
+            tempState.localization.section10_date = es.Form_Canada.section10_date;
+        }
+        else{
+            console.log("error switching languages");
+        }
+        
+        this.setState(tempState);
     }
 
     renderRedirect = () => {
@@ -95,12 +376,14 @@ class Intro extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <img src={canada} alt="Flag of Canada" width="200px" height="200px" />
-                <p className="title">Welcome to Canada!</p>
-                <p className="subtitle">Please fill out the form to enter into Canada.</p>
-                <button className="button is-outlined is-light" onClick={() => this.next()} >Next</button>
+                <p className="title">{localization.section1_title}</p>
+                <p className="subtitle">{localization.section1_subtitle}</p>
+                <button className="button is-outlined is-light" onClick={() => this.next()} >{localization.next}</button>
             </div>
 
         );
@@ -127,40 +410,42 @@ class Part1 extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <img src={family} alt="Icon of a family" width="175px" height="150px" id="familyPhoto" />
-                <p className="title">Part 1</p>
-                <p className="subtitle">All travelers living together at same address at home:</p>
-                <p className="subtitle">1 Person Minimum | 4 People Maximum</p>
+                <p className="title">{localization.section2_title}</p>
+                <p className="subtitle">{localization.section2_subtitle}</p>
+                <p className="subtitle">{localization.section2_minmax}</p>
                 <div className="columns">
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">First Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_fName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Middle Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_mName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Last Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_lName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date of Birth:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_dob}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Citizenship:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_citizenship}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -169,31 +454,31 @@ class Part1 extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">First Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_fName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Middle Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_mName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Last Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_lName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date of Birth:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_dob}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Citizenship:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_citizenship}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -202,31 +487,31 @@ class Part1 extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">First Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_fName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Middle Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_mName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Last Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_lName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date of Birth:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_dob}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Citizenship:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_citizenship}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -235,39 +520,39 @@ class Part1 extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">First Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_fName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Middle Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_mName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Last Name:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_lName}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date of Birth:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_dob}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Citizenship:</label>
+                            <label className="label has-text-left has-text-white">{localization.section2_citizenship}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <hr />
-                    </div>
+                    </div>    
                 </div>
-                <button className="button is-outlined is-light" onClick={() => this.next()} >Next</button>
+                <button className="button is-outlined is-light" onClick={() => this.next()} >{localization.next}</button>
             </div>
 
         );
@@ -293,45 +578,47 @@ class HomeAddress extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <img src={house} alt="Icon of a house" width="150px" height="150px" id="housePhoto" />
-                <p className="title">Part 2</p>
-                <p className="subtitle">Home Address:</p>
+                <p className="title">{localization.section3_title}</p>
+                <p className="subtitle">{localization.section3_subtitle}</p>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Home address (Number, street, apartment number)</label>
+                    <label className="label has-text-left has-text-white">{localization.section3_address}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">City/Town</label>
+                    <label className="label has-text-left has-text-white">{localization.section3_city}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Province/State</label>
+                    <label className="label has-text-left has-text-white">{localization.section3_province}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Country</label>
+                    <label className="label has-text-left has-text-white">{localization.section3_country}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Postal/Zip code</label>
+                    <label className="label has-text-left has-text-white">{localization.section3_zip}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-variable is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -358,6 +645,8 @@ class ArrivingBy extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -374,14 +663,14 @@ class ArrivingBy extends Component {
                         <img src={car} alt="Icon of a car" width="150px" height="150px" id="carPhoto" />
                     </div>
                 </div>
-                <p className="title">Part 3</p>
-                <p className="subtitle">Arriving by:</p>
+                <p className="title">{localization.section4_title}</p>
+                <p className="subtitle">{localization.section4_subtitle}</p>
                 <div className="columns is-3">
-                    <label className="label has-text-left has-text-white">Method of arrival</label>
+                    <label className="label has-text-left has-text-white">{localization.section4_method}</label>
                     <div class="dropdown is-hoverable control">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>Arriving By</span>
+                                <span>{localization.section4_subtitle}</span>
                                 <span class="icon is-small">
                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                                 </span>
@@ -390,31 +679,31 @@ class ArrivingBy extends Component {
                         <div class="dropdown-menu" id="dropdown-menu" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    Air
-      </a>
+                                    {localization.section4_air}
+                                </a>
                                 <a class="dropdown-item">
-                                    Rail
-      </a>
+                                    {localization.section4_rail}
+                                </a>
                                 <a href="#" class="dropdown-item is-active">
-                                    Marine
-      </a>
+                                    {localization.section4_marine}
+                                </a>
                                 <a href="#" class="dropdown-item">
-                                    Highway
-      </a>
+                                    {localization.section4_highway}
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Airline/flight No., train No. or vessel name</label>
+                    <label className="label has-text-left has-text-white">{localization.section4_name}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div className="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -441,6 +730,8 @@ class PurposeOfTraveller extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -454,18 +745,18 @@ class PurposeOfTraveller extends Component {
                         <img src={business} alt="Icon of a briefcase" width="150px" height="150px" id="briefcasePhoto" />
                     </div>
                 </div>
-                <p className="title">Part 4</p>
-                <p className="subtitle">Purpose of Trip:</p>
+                <p className="title">{localization.section5_title}</p>
+                <p className="subtitle">{localization.section5_subtitle}</p>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Study, Personal, or Business</label>
+                    <label className="label has-text-left has-text-white">{localization.section5_purpose}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -492,6 +783,8 @@ class ArrivingFrom extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -505,18 +798,18 @@ class ArrivingFrom extends Component {
                         <img src={world} alt="Icon of Earth" width="150px" height="150px" id="earthPhoto" />
                     </div>
                 </div>
-                <p className="title">Part 5</p>
-                <p className="subtitle">Arriving From:</p>
+                <p className="title">{localization.section6_title}</p>
+                <p className="subtitle">{localization.section6_subtitle}</p>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">U.S. only, Other country direct, or Other countries via the U.S.</label>
+                    <label className="label has-text-left has-text-white">{localization.section6_from}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -543,6 +836,8 @@ class BringingCanada extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -550,43 +845,43 @@ class BringingCanada extends Component {
                         <img src={duties} alt="Icon of a tax" width="150px" height="150px" id="taxPhoto" />
                     </div>
                 </div>
-                <p className="title">Part 6</p>
-                <p className="subtitle">Declarations:</p>
+                <p className="title">{localization.section7_title}</p>
+                <p className="subtitle">{localization.section7_subtitle}</p>
                 <div className="columns is-vcentered">
                     <div className="column">
-                        <p className="subtitle">I am/we are bringing into Canada (Answer with Yes or No to the questions):</p>
+                        <p className="subtitle">{localization.section7_declaration}</p>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Firearms or other weapons (e.g. switchblades, Mace or pepper spray).</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_firearm}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Commercial goods, whether or not for resale (e.g. samples, tools, equipment).</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_goods}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Meat, fish, seafood, eggs, dairy products, fruits, vegetables, seeds, nuts, plants, flowers, wood, animals, birds, insects, and any parts, products or by-products of any of the foregoing.</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_animals}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Currency and/or monetary instruments totaling CAN$10,000 or more.</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_money}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">I/we have unaccompanied goods.</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_unaccompany}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">I/we have visited a farm and will be going to a farm in Canada.</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_farm}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -594,26 +889,26 @@ class BringingCanada extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date left Canada YY - MM - DD</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_dateLeft}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Value of goods – CAN$ purchased or received abroad (including gifts, alcohol & tobacco</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_value}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
                         </div>
                         <hr />
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Date left Canada YY - MM - DD</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_dateLeft}</label>
                             <div className="control">
                                 <input className="input" type="date" />
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Value of goods – CAN$ purchased or received abroad (including gifts, alcohol & tobacco</label>
+                            <label className="label has-text-left has-text-white">{localization.section7_value}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -622,8 +917,8 @@ class BringingCanada extends Component {
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -650,6 +945,8 @@ class VisitorsToCanada extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -657,24 +954,24 @@ class VisitorsToCanada extends Component {
                         <img src={visiting} alt="Icon of a visitor" width="150px" height="150px" id="visitorPhoto" />
                     </div>
                 </div>
-                <p className="title">Part 7</p>
-                <p className="subtitle">Visitors to Canada:</p>
+                <p className="title">{localization.section8_title}</p>
+                <p className="subtitle">{localization.section8_subtitle}</p>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Duration of stay in Canada (How many days)</label>
+                    <label className="label has-text-left has-text-white">{localization.section8_stay}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Do you or any person listed above exceed the duty-free allowances per person? (See instructions on the left.) - Yes or No</label>
+                    <label className="label has-text-left has-text-white">{localization.section8_exceed}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -701,6 +998,8 @@ class ResidentsOfCanada extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -708,18 +1007,18 @@ class ResidentsOfCanada extends Component {
                         <img src={peopleHouse} alt="Icon of a peopleinhouse" width="150px" height="150px" id="peopleHousePhoto" />
                     </div>
                 </div>
-                <p className="title">Part 8</p>
-                <p className="subtitle">Residents of Canada:</p>
+                <p className="title">{localization.section9_title}</p>
+                <p className="subtitle">{localization.section9_subtitle}</p>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Do you or any person listed above exceed the exemptions per person? (See instructions on the left.) - Yes or No</label>
+                    <label className="label has-text-left has-text-white">{localization.section9_exceed}</label>
                     <div className="control">
                         <input className="input" type="text" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
@@ -747,6 +1046,8 @@ class Signatures extends Component {
     }
 
     render() {
+        const localization = this.props.state.localization;
+
         return (
             <div>
                 <div className="columns">
@@ -754,13 +1055,13 @@ class Signatures extends Component {
                         <img src={signature} alt="Icon of a digitial signature" width="150px" height="150px" id="signaturePhoto" />
                     </div>
                 </div>
-                <p className="title">Part 9</p>
-                <p className="subtitle">Signatures (age 16 and older): I certify that my declaration is true and complete</p>
-                <p className="subtitle">1 signature minimum | 4 signatures maximum</p>
+                <p className="title">{localization.section10_title}</p>
+                <p className="subtitle">{localization.section10_subtitle}</p>
+                <p className="subtitle">{localization.section10_minmax}</p>
                 <div className="columns">
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Person #1 (E-signature)</label>
+                            <label className="label has-text-left has-text-white">{localization.section10_person1}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -768,7 +1069,7 @@ class Signatures extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Person #2 (E-signature)</label>
+                            <label className="label has-text-left has-text-white">{localization.section10_person2}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -776,7 +1077,7 @@ class Signatures extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Person #3 (E-signature)</label>
+                            <label className="label has-text-left has-text-white">{localization.section10_person3}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -784,7 +1085,7 @@ class Signatures extends Component {
                     </div>
                     <div className="column">
                         <div className="field">
-                            <label className="label has-text-left has-text-white">Person #4 (E-signature)</label>
+                            <label className="label has-text-left has-text-white">{localization.section10_person4}</label>
                             <div className="control">
                                 <input className="input" type="text" />
                             </div>
@@ -792,15 +1093,15 @@ class Signatures extends Component {
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label has-text-left has-text-white">Date</label>
+                    <label className="label has-text-left has-text-white">{localization.section10_date}</label>
                     <div className="control">
                         <input className="input" type="date" />
                     </div>
                 </div>
                 <hr />
                 <div class="columns is-6">
-                    <button className="button is-outlined is-light column" onClick={() => this.back()} >Back</button>
-                    <button className="button is-outlined is-light column" onClick={() => this.next()} >Next</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.back()} >{localization.back}</button>
+                    <button className="button is-outlined is-light column" onClick={() => this.next()} >{localization.next}</button>
                 </div>
             </div>
 
