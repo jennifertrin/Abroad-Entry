@@ -59,7 +59,7 @@ class App extends Component {
               <Medical setState={this.setState.bind(this)} state={this.state} />
             </Route>
             <Route path="/summary">
-              <Summary />
+              <Summary setState={this.setState.bind(this)} state={this.state} />
             </Route>
             <Route path="/flight/code">
               <FlightAttendantCode flightCode = {this.state.flightCode} />

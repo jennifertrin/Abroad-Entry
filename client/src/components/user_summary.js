@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../style/css/custom-bulma.css';
 import '../style/css/style.css';
 import {Redirect} from 'react-router-dom';
+import axios from 'axios';
 import Navbar from './navbar';
 import en from '../i18n/en.json';
 import fr from '../i18n/fr.json';
@@ -53,6 +54,14 @@ class Summary extends Component {
         let tempState = this.state;
         tempState.redirect = true;
         this.setState(tempState);
+        let propState = this.props.state;
+        const Data = propState.Data;
+        const MedicalData = propState.MedicalData;
+        const ID = propState.identificationNumber;
+        axios.post(`/api/user/formSubmit`, { Data, MedicalData, ID})
+        .then(res => {
+            console.log(res.data.result);
+        })
     }
 
     renderRedirect = () => {

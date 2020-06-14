@@ -107,7 +107,21 @@ app.post('/api/user/medicalEncrypt', (req,res) => {
 
 //Submits the user form
 app.get('/api/user/formSubmit', (req,res) => {
-    
+    let formSubmit = false;
+    for(let i = 0; i < exampleData.passengerForms.length ; i++){
+        if(req.body.ID == exampleData.passengerForms[i].Passport){
+            exampleData.MedicalRecords = req.body.MedicalData;
+            exampleData.Form = req.body.Data;
+            formSubmit = true;
+            break;
+        }
+    }
+    if(formSubmit){
+        res.send({"result": true});
+    }
+    else{
+        res.send({"result": false});
+    }
     //req.post to api
 });
 
@@ -123,6 +137,6 @@ app.post('/api/flight/formSubmit', (req,res) => {
 });
 
 // Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
+app.post('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
