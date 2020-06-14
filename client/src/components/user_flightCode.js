@@ -5,13 +5,23 @@ import {Redirect} from 'react-router-dom';
 import Navbar from './navbar';
 import axios from 'axios';
 import $ from 'jquery';
+import en from '../i18n/en.json';
+import fr from '../i18n/fr.json';
+import es from '../i18n/es.json';
 
 class FlightCode extends Component {
     constructor(props){
         super(props);
         this.state = {
             validation: false,
-            redirect: false
+            redirect: false,
+            localization : {
+                title: en.FlightCode.title,
+                subtitle: en.FlightCode.subtitle,
+                code: en.FlightCode.code,
+                example: en.FlightCode.example,
+                submit: en.FlightCode.submit
+            }
         }
     }
 

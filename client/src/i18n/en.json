@@ -6,7 +6,11 @@
         "Spanish": "Spanish"
     },
     "FlightCode": {
-
+        "title": "Welcome to Abroad Entry!",
+        "subtitle": "Please enter the code provided by your flight attendants.",
+        "code":  "Code:",
+        "example": "Example: A8B6F6",
+        "submit": "Submit"
     },
     "AuthenticationCode": {
 
