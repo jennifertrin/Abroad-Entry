@@ -375,7 +375,7 @@ class ArrivingBy extends Component {
                 <p className="subtitle">Arriving by:</p>
                 <div className="columns is-3">
                     <label className="label has-text-left has-text-white">Method of arrival</label>
-                    <div class="dropdown is-hoverable">
+                    <div class="dropdown is-hoverable control">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                                 <span>Arriving By</span>
