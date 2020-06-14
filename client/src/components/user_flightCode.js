@@ -51,7 +51,7 @@ class FlightCode extends Component {
                     </svg>
                 </div>
                 <div class="panelTravel">
-                        <h2>Please enter the code provided by your flight attendants.</h2>
+                        <h2 class="instructions">Please enter the code provided by your flight attendants.</h2>
                 </div>
                     <div class="input-group mb-3 input-group-lg code-input col-sm-4">
                         <div class="input-group-prepend">
