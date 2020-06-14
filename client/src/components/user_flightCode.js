@@ -66,14 +66,15 @@ class FlightCode extends Component {
                 <div class="panelTravel">
                         <h2 class="instructions">Please enter the code provided by your flight attendants.</h2>
                 </div>
-                    <div class="input-group mb-3 input-group-lg code-input col-sm-4">
+                    <div class="input-group mb-3 input-group-lg code-input">
                         <div class="input-group-prepend">
                                 <span class="input-group-text" id="codeSpan">Code</span>
                             </div>
                             <input type="text" class="form-control" placeholder="Example: A8B6F6" id="flightCode" />
-                        </div>
-                        <button type="button" class="Submit btn-lg" onClick={() => this.validateCode(document.getElementById("flightCode").value)}>Submit</button>
-                
+                    </div>
+                <div class="SubmitButton">
+                <button type="button" class="Submit btn-lg" onClick={() => this.validateCode(document.getElementById("flightCode").value)}>Submit</button>
+                </div>
             </div>
         );
     }
