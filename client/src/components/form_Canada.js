@@ -1,36 +1,72 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import '../style/style.css';
+import canada from '../images/canada.png'
+import family from '../images/family.png'
+import Languages from './languages';
 
 class FormCanada extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div class="formCanada">
-                <div class="welcomeCountry row">
-                    <div class="column">
-                    <img src="../images/canada.png"
-                    alt="Flag of Canada"></img>
+                <div class="welcomeCountry shadow p-3 mb-5 bg-white rounded">
+                    <div class="smallColumn">
+                        <img src={canada}
+                            alt="Flag of Canada" width="150px" height="150px"></img>
                     </div>
-                    <div id="welcomeCanada column">
-                    <h1>Welcome to Canada!</h1>
-                    <p>Please fill out the form to enter into Canada.</p>
+                    <div id="welcomeCanada largeColumn">
+                        <h1>Welcome to Canada!</h1>
+                        <p>Please fill out the form to enter into Canada.</p>
                     </div>
                 </div>
                 <div class="section" id="sectionOneCanada">
-                <h1>Part 1</h1>
-                <h2>All travelers living together at same address at home:</h2>
+                    <div class="smallColumn">
+                        <img src={family} alt="Icon of a family" width="175px" height="150px" id="familyPhoto"></img></div>
+                    <div class="largecolumn">
+                        <h1>Part 1</h1>
+                        <h2>All travelers living together at same address at home:</h2>
+                    </div>
                 </div>
-                <p>Last Name</p>
-                <input type="text" class="formInputx"></input>
-                <p>First Name</p>
-                <p>Middle Name</p>
-                <p>Date of Birth</p>
-                <p>Citizenship</p>
-                <button>Add Another Traveler</button>
-                <button>Next</button>
+                <div class="FormSection">
+                    <div class="input-group mb-3 col-md">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">First Name</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="First Name" aria-describedby="basic-addon1"></input>
+                    </div>
+                    <div class="input-group mb-3 col-md">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Middle Name</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Middle Name" aria-describedby="basic-addon1"></input>
+                    </div>
+                    <div class="input-group mb-3 col-md">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Last Name</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Last Name" aria-describedby="basic-addon1"></input>
+                    </div>
+                    <div class="input-group mb-3 col-md">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Date of Birth</span>
+                        </div>
+                        <input type="date" class="form-control" aria-label="Date of Birth" aria-describedby="basic-addon1"></input>
+                    </div>
+                    <div class="input-group mb-3 col-md">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Citizenship</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Citizenship" aria-describedby="basic-addon1"></input>
+                    </div>
+                </div>
+                <div class="buttonRow">
+                <button class="btn btn-primary addTraveler">Add Another Traveler</button>
+                <button class="btn btn-secondary next">Next</button>
+                </div>
                 <h2>Home Address:</h2>
                 <p>Home address (Number, street, apartment number)</p>
                 <p>City/Town</p>
@@ -74,7 +110,7 @@ class FormCanada extends Component {
                 <hr />
                 <h2>Signatures (age 16 and older): I certify that my declaration is true and complete.</h2>
                 <p>Date</p>
-                </div>
+            </div>
         );
     }
 }

@@ -11,7 +11,8 @@ import FlightCode from './components/user_flightCode';
 import AuthenticationCode from './components/user_authenticationCode';
 import Summary from './components/user_summary';
 import FlightAttendantCode from './components/FlightAttendantCode';
-import FlightAttendantInput from './components/FlightAttendantInput'
+import FlightAttendantInput from './components/FlightAttendantInput';
+import Medical from './components/medicalRecords';
 import FormCanada from './components/form_Canada';
 import FormAmerica from './components/form_America';
 import FormMexico from './components/form_Mexico';
@@ -54,7 +55,9 @@ class App extends Component {
             <Route path="/form/Mexico">
               <FormMexico />
             </Route>
-            {/**Medical Records should be a component of the forms */}
+            <Route path="/MedicalRecords">
+              <Medical />
+            </Route>
             <Route path="/summary">
               <Summary />
             </Route>

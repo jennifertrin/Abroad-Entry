@@ -41,6 +41,7 @@
 .panelTravel {
     position: relative;
     background-color: #DA4167;
+    color: #F2F5EA;
     width: 85%;
     height: 30%;
     margin: 0 auto;
@@ -101,9 +102,13 @@ svg {
 }
 
 .Submit {
-    position: relative;
     background-color: #68C5DB;
     color: #383F51;
+    margin: 0 auto;
+}
+
+.SubmitButton {
+    margin: 0 auto;
 }
 
 .languageButton {
@@ -141,15 +146,22 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     height: 40%;
-    background-color: #ffffff;  
+    background-color: #ffffff;
 }
 
-/*.welcomeCountry:before {
-    content: "";
-    display: block;
-    padding: 5% 5% 0;
-    text-align: left;
-}*/
+#sectionOneCanada {
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    background-color: #DA4167;
+    color: #F2F5EA;
+    width: 85%;
+    margin: 0 auto;
+}
+
+#FormSection {
+    padding: 10px 10px;
+    margin-top: 10px;
+}
 
 .row {
     display: flex;
@@ -158,25 +170,55 @@ body {
     width: 100%;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
+.smallColumn {
+    flex: 1 0 0;
 }
 
-.formInput {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  width: 100%;
-  background-color: #e8eeef;
-  color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 30px;
+.largeColumn {
+    flex: 2 0 0;
 }
+
+#familyPhoto {
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .smallColumn {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .largeColumn {
+        margin: 0 auto;
+        width: 100%;
+      }
+
+  }
+
+  .buttonRow {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .next {
+    margin-left: 15px;
+  }
+
+  .addTraveler {
+      margin-right: 15px;
+  }
+
+  .input-group-text {
+    background-color: #F2F5EA;
+    color: #DA4167;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.01em;
+    border: 1px solid #383F51;
+  }
+
+  .form-control {
+    border: 1px solid #383F51;
+  }
+
+
 
 
