@@ -14,37 +14,6 @@ import FlightAttendantCode from './components/FlightAttendantCode';
 import FlightAttendantInput from './components/FlightAttendantInput'
 import FormCanada from './components/form_Canada';
 
-<<<<<<< Updated upstream
-function App() {
-  return (
-    <div className="App">
-
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <FlightCode />
-          </Route>
-          <Route path="/auth">
-            <AuthenticationCode />
-          </Route>
-          <Route path="/form/Canada">
-            <FormCanada />
-          </Route>
-          {/**Medical Records should be a component of the forms */}
-          <Route path="/summary">
-            <Summary />
-          </Route>
-          <Route path="/flight/form">
-            <FlightAttendantCode />
-          </Route>
-          <Route path="/flight/code">
-            <FlightAttendantInput />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
-=======
 class App extends Component {
   constructor(props){
     super(props);
@@ -90,7 +59,6 @@ class App extends Component {
       </div>
     );
   } 
->>>>>>> Stashed changes
 }
 
 export default App;
