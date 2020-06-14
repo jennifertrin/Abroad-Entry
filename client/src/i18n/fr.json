@@ -28,7 +28,17 @@
         "submit": "Soumets"
     },
     "MedicalRecords": {
-
+        "title": "Dossiers médicaux",
+        "blood": "Groupe sanguin",
+        "negative": "Négatif",
+        "positive": "Positif",
+        "allergies": "Vos médicaments allergènes:",
+        "penicillin": "Pénicilline",
+        "novocaine": "Novocaïne",
+        "aspirin": "Aspirine",
+        "analgin": "Analgin",
+        "other": "Un autre",
+        "submit": "Soumets"
     },
     "Form_Canada": {
         

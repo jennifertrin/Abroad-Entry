@@ -28,7 +28,17 @@
         "submit": "Enviar"
     },
     "MedicalRecords": {
-
+        "title": "Registros médicos",
+        "blood": "Tipo de sangre",
+        "negative": "Negativo",
+        "positive": "Positivo",
+        "allergies": "Sus medicamentos alérgenos:",
+        "penicillin": "Penicilina",
+        "novocaine": "Novocaína",
+        "aspirin": "Aspirina",
+        "analgin": "Analgin",
+        "other": "Otro",
+        "submit": "Enviar"
     },
     "Form_Canada": {
         
