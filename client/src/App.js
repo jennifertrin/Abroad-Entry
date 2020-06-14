@@ -28,8 +28,9 @@ class App extends Component {
         airline: '',
         originAirport: '',
         destinationAirport: '',
-        accompanyingForm: '',
-      }
+        accompanyingForm: ''
+      },
+      identificationNumber: ''
     }
   }
 

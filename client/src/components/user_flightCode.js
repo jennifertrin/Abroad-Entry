@@ -21,7 +21,6 @@ class FlightCode extends Component {
     validateCode(code){
         axios.post(`api/user/codeValidation`, { code })
         .then(res => {
-            console.log(res.data);
             this.setState({validation: res.data.result});
             let Parameters = {
                 validFlight : res.data.result,

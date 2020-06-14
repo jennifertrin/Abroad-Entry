@@ -12,10 +12,6 @@ class AuthenticationCode extends Component {
         }
     }
 
-    componentDidMount(){
-        console.log(this.props.Parameters);
-    }
-
     onLanguageChange(lang){
 
     }
@@ -24,12 +20,12 @@ class AuthenticationCode extends Component {
         //validated from the value
         axios.post(`api/user/passportValidation`, { code })
         .then(res => {
-            console.log(res.data);
             this.setState({validation: res.data.result});
             if(this.state.validation === true){
                 let tempState = this.state;
                 tempState.redirect = true;
                 this.setState(tempState);
+                this.props.setState({identificationNumber: code});
             }
             else{
                 console.log("WRONG PASSENGER NUMBER");
@@ -39,7 +35,6 @@ class AuthenticationCode extends Component {
 
     renderRedirect = () => {
         const destination = '/form/'.concat(this.props.Parameters.accompanyingForm);
-        console.log(destination);
         if (this.state.redirect) {
             return <Redirect to={destination} />
             //redirects to the proper form
