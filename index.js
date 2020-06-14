@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+//MongoDB user: dbAdmin
+//MongoDB pass: d1WfVPEg62NVFNYY
+
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -21,16 +24,40 @@ let exampleData = {
 	"flightCode" : "A8F3C9",
 	"originAirport" : "YYZ",
     "destinationAirport" : "JFK",
-    "accompanyingForm" : "America",
+    "accompanyingForm" : "America ",
 	"passengerForms" : [
 		{
-			"Passport": "A832DF",
+            "Passport": "A832DF",
+            "MedicalRecords": {
+
+            },
+            "Form": {
+
+            }
 		},{
-			"Passport": "B832DF",
+            "Passport": "B832DF",
+            "MedicalRecords": {
+
+            },
+            "Form": {
+                
+            }
 		},{
-			"Passport": "C832DF",
+            "Passport": "C832DF",
+            "MedicalRecords": {
+
+            },
+            "Form": {
+                
+            }
 		},{
-			"Passport": "D832DF",
+            "Passport": "D832DF",
+            "MedicalRecords": {
+
+            },
+            "Form": {
+                
+            }
 		},
 	]
 }
@@ -68,8 +95,11 @@ app.post('/api/user/passportValidation', (req,res) => {
 
 //Encrypts the medical record data
 app.get('/api/user/medicalEncrypt', (req,res) => {
-    /*var list = ["item1", "item2", "item3"];
-    res.json(list);*/
+    //for(let i=0; i<req.body.length; i++){
+    //encryption and then put in list    
+    //}
+    //
+    //res encrypted
     console.log('Sent list of items');
 });
 
