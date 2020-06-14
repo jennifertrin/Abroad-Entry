@@ -24,6 +24,7 @@ let exampleData = {
 	"flightCode" : "A8F3C9",
 	"originAirport" : "JFK",
     "destinationAirport" : "YYZ",
+    "destinationDate": '',
     "accompanyingForm" : "Canada ",
 	"passengerForms" : [
 		{
@@ -105,11 +106,18 @@ app.get('/api/user/medicalEncrypt', (req,res) => {
 
 //Submits the user form
 app.get('/api/user/formSubmit', (req,res) => {
+    
     //req.post to api
 });
 
 //Submits the flight attendant form
-app.get('/api/flight/formSubmit', (req,res) => {
+app.post('/api/flight/formSubmit', (req,res) => {
+    exampleData.destinationDate = req.body.date;
+    exampleData.originAirport = req.body.departure;
+    exampleData.destinationAirport = req.body.arrival;
+
+    res.send(200, {"code": exampleData.flightCode});
+
     //req.post to api, make a random code and send back the code as well as pushing to api
 });
 
