@@ -151,142 +151,90 @@ class Medical extends Component {
                     <div className="hero-body">
                         <div className="container is-vcentered">
                             <h1 className="title">{localization.title}</h1>
-                            <h2>{localization.part1}</h2>
-                            <div class="field is-horizontal">
-                                <div class="field-label">
-                                    <label class="label subtitle">{localization.testing}</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field is-narrow">
-                                        <div class="control">
-                                            <label class="radio">
-                                                Yes
+                            <h2 className="subtitle">{localization.part1}</h2>
+                            <div className="box">
+                                <div className="has-text-centered">
+                                    <div>
+                                        <label className="label subtitle has-text-dark">{localization.testing}</label>
+                                        <label class="radio">
+                                            Yes
                                             <input type="radio" name="member" value="yes"></input>
-                                            </label>
-                                            <label class="radio">
-                                                No
+                                        </label>
+                                        <label class="radio">
+                                            No
                                             <input type="radio" name="member" value="no"></input>
-                                            </label>
-                                        </div>
+                                        </label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="field is-horizontal has-text-centered">
-                                <div class="field-label has-text-centered">
-                                    <label class="label subtitle">{localization.close}</label>
-                                </div>
-                                <div class="field-body has-text-centered">
-                                    <div class="field is-narrow">
-                                        <div class="control">
-                                            <label class="radio">
-                                                Yes 
+                                    <br />
+                                    <div>
+                                        <label className="label subtitle has-text-dark">{localization.close}</label>
+                                        <label class="radio">
+                                            Yes 
                                             <input type="radio" name="member" value="yes"></input>
-                                            </label>
-                                            <label class="radio">
-                                                No 
-                                            <input type="radio" name="member" value="no"></input>
-                                            </label>
-                                        </div>
+                                        </label>
+                                        <label class="radio">
+                                            No 
+                                        <input type="radio" name="member" value="no"></input>
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        <label className="label subtitle has-text-dark">{localization.blood}:</label>
+                                        <select type="" id="dropdown" placeholder="Choose an option">
+                                            <option value="0">---</option>
+                                            <option value="1">O</option>
+                                            <option value="2">A</option>
+                                            <option value="3">B</option>
+                                            <option value="4">AB</option>
+                                        </select>
+                                        <input type="radio" name="radio-res" id="negative" value="-" ></input>
+                                        <label id="radio-label" for="negative">- {localization.negative}</label>
+                                        <input type="radio" name="radio-res" id="positive" value="+"></input>
+                                        <label id="radio-label" for="positive">+ {localization.positive}</label>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        <label className="label subtitle has-text-dark">{localization.allergyExists}</label>
+                                        <label class="radio">
+                                            Yes 
+                                            <input type="radio" name="member" value="yes" />
+                                        </label>
+                                        <label class="radio">
+                                            No
+                                            <input type="radio" name="member" value="no" />
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        <label className="label subtitle has-text-dark">{localization.allergies}</label>
+                                        <input type="checkbox" name="check" id="penicillin" value="penicillin" ></input>
+                                        <label id="check" for="penicillin">{localization.penicillin}</label>
+                                        <input type="checkbox" name="check" id="novocaine" value="novocaine" ></input>
+                                        <label id="check" for="novocaine">{localization.novocaine}</label>
+                                        <input type="checkbox" name="check" id="aspirin" value="aspirin" ></input>
+                                        <label id="check" for="aspirin">{localization.aspirin}</label>
+                                        <input type="checkbox" name="check" id="analgin" value="analgin" ></input>
+                                        <label id="check" for="analgin">{localization.analgin}</label>
+                                        <input type="checkbox" name="check" id="other" value="other" onClick={() => this.otherCheck()}></input>
+                                        <label id="textarea-label" for="other">{localization.other}</label>
+                                        {this.state.otherCheck ?
+                                            <textarea name="textarea" cols="35" placeholder="Indicate which..." id="otherAllergy" />
+                                            :
+                                            <div />}
+                                    </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div>
-                                <label id="dropdown-label subtitle" for="dropdown">{localization.blood}:</label>
-                                <select type="" id="dropdown" placeholder="Choose an option">
-                                    <option value="0">---</option>
-                                    <option value="1">O</option>
-                                    <option value="2">A</option>
-                                    <option value="3">B</option>
-                                    <option value="4">AB</option>
-                                </select>
-                                <input type="radio" name="radio-res" id="negative" value="-" ></input>
-                                <label id="radio-label" for="negative">- {localization.negative}</label>
-                                <input type="radio" name="radio-res" id="positive" value="+"></input>
-                                <label id="radio-label" for="positive">+ {localization.positive}</label>
-                            </div>
-                            <br />
-                            <div>
-                                 <div class="field is-horizontal">
-                                <div class="field-label">
-                                    <label class="label subtitle">{localization.allergyExists}</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field is-narrow">
-                                        <div class="control">
-                                            <label class="radio">
-                                                Yes 
-                                                <input type="radio" name="member" value="yes">
-                                            </input>
-                                            </label>
-                                            <label class="radio">
-                                                No
-                                                <input type="radio" name="member" value="no">
-                                                </input>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                <p className="subtitle">{localization.allergies}</p>
-                                <input type="checkbox" name="check" id="penicillin" value="penicillin" ></input>
-                                <label id="check" for="penicillin">{localization.penicillin}</label>
-                                <input type="checkbox" name="check" id="novocaine" value="novocaine" ></input>
-                                <label id="check" for="novocaine">{localization.novocaine}</label>
-                                <input type="checkbox" name="check" id="aspirin" value="aspirin" ></input>
-                                <label id="check" for="aspirin">{localization.aspirin}</label>
-                                <input type="checkbox" name="check" id="analgin" value="analgin" ></input>
-                                <label id="check" for="analgin">{localization.analgin}</label>
-                                <input type="checkbox" name="check" id="other" value="other" onClick={() => this.otherCheck()}></input>
-                                <label id="textarea-label" for="other">{localization.other}</label>
-                                {this.state.otherCheck ?
-                                    <textarea name="textarea" cols="35" placeholder="Indicate which..." id="otherAllergy" />
-                                    :
-                                    <div />}
-                            </div>
-                            <br />
+                                <br />
                             <button type="button" className="button is-dark" onClick={() => this.submitRecord()}>{localization.submit}</button>
-                        </div>
+                            </div>                   
+                       </div>
                     </div>
                 </div>
             </div>
-            </div>
+
+
         );
     }
 }
 
-<<<<<<< HEAD
 export default Medical;
-
-/*
-<div class="medicalRecords">
-                <label id="dropdown-label" for="dropdown">Blood type:</label>
-                <select type="" id="dropdown" placeholder="Choose an option">
-                    <option value="0">---</option>
-                    <option value="1">O</option>
-                    <option value="2">A</option>
-                    <option value="3">B</option>
-                    <option value="4">AB</option>
-                </select>
-                <input type="radio" name="radio-res" id="negative" value="-" ></input>
-                <label id="radio-label" for="negative">- Negative</label>
-                <input type="radio" name="radio-res" id="positive" value="+"></input>
-                <label id="radio-label" for="positive">+ Positive</label>
-                <label id="cur_state-label"  >Your medicines allergens:</label>
-                <input type="checkbox" name="check" id="penicillin" value="penicillin" ></input>
-                <label id="check" for="penicillin">Penicillin</label>
-                <input type="checkbox" name="check" id="novocaine" value="novocaine" ></input>
-                <label id="check" for="novocaine">Novocaine</label>
-                <input type="checkbox" name="check" id="aspirin" value="aspirin" ></input>
-                <label id="check" for="aspirin">Aspirin</label>
-                <input type="checkbox" name="check" id="analgin" value="analgin" ></input>
-                <label id="check" for="analgin">Analgin</label>
-                <input type="checkbox" name="check" id="other" value="other" ></input>
-                <label id="textarea-label" for="other">Other one</label>
-                <textarea name="textarea" cols="35"
-                    placeholder="Indicate which..." disabled></textarea>
-            </div>
-*/
-=======
-export default Medical;
->>>>>>> b481100be2084e457b7a28321776046c317708d2
