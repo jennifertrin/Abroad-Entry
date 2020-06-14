@@ -6,6 +6,7 @@ import $ from 'jquery';
 import en from '../i18n/en.json';
 import fr from '../i18n/fr.json';
 import es from '../i18n/es.json';
+import logo from '../images/Abroad-entry.png'
 
 class Navbar extends Component {
     constructor(props){
@@ -69,7 +70,7 @@ class Navbar extends Component {
         return(
                 <div className="z-index10">
                     <div className="logo ml-40 mr-40 mt-30 mb-30">
-                        Logo goes here
+                    <img src={logo} alt="Logo of Abroad Entry" width="125px" height="125px" id="logo" />
                     </div>
                     <div className="languages ml-40 mr-40 mt-30 mb-30">
                         <div className="dropdown is-right" id="language">
